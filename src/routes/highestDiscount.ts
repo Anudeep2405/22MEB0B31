@@ -3,67 +3,76 @@ import { Offer } from "../models/Offer";
 
 const router = Router();
 
-// GET /highest-discount?amountToPay=10000&bankName=HDFC&paymentInstrument=EMI_OPTIONS(optional)
+/**
+ * GET /highest-discount
+ * Query params:
+ *  - amountToPay: number (required)
+ *  - bankName: string (required)
+ *  - paymentInstrument: string (optional - for bonus: CREDIT, EMI_OPTIONS, etc.)
+ *
+ * Response:
+ *  {
+ *    "highestDiscountAmount": number
+ *  }
+ */
 router.get("/", async (req, res) => {
-  const amountToPay = Number(req.query.amountToPay);
+  const amountToPayRaw = req.query.amountToPay as string | undefined;
   const bankName = req.query.bankName as string | undefined;
-  const paymentInstrument = req.query.paymentInstrument as string | undefined;
+  const paymentInstrument = req.query.paymentInstrument as string | undefined; // bonus (optional)
 
-  // Basic validation
-  if (!amountToPay || Number.isNaN(amountToPay)) {
-    return res.status(400).json({
-      error: "amountToPay is required and must be a number"
-    });
+  const amountToPay = amountToPayRaw ? Number(amountToPayRaw) : NaN;
+
+  // Validate required params
+  if (!amountToPayRaw || Number.isNaN(amountToPay)) {
+    return res
+      .status(400)
+      .json({ error: "amountToPay is required and must be a number" });
   }
 
   if (!bankName) {
-    return res.status(400).json({
-      error: "bankName is required"
-    });
+    return res.status(400).json({ error: "bankName is required" });
   }
 
   try {
-    // 1) Build Mongo query
+    // 1) Build query: offers that support this bank (and instrument, if provided)
     const query: any = { bankName };
 
     if (paymentInstrument) {
       query.paymentInstrument = paymentInstrument;
     }
 
-    // 2) Fetch all offers for that bank (and instrument, if provided)
     const offers = await Offer.find(query);
 
     if (offers.length === 0) {
-      return res.json({
-        highestDiscountAmount: 0,
-        bestOffer: null,
-        message: "No matching offers found for given bank/paymentInstrument"
-      });
+      // No matching offers → discount is 0
+      return res.json({ highestDiscountAmount: 0 });
     }
 
-    // 3) Find offer with highest 'value'
-    // Flipkart 'value' is in paise (e.g. 50000 = ₹500), so we convert at the end
-    let bestOffer = offers[0];
+    // 2) Find best offer and compute discount
+    //
+    // We stored Flipkart's "value" field in Offer.value.
+    // In their JSON it looks like paise (e.g. 50000 => ₹500),
+    // but the assignment says it's OK if our calculation doesn't
+    // match Flipkart exactly. We'll:
+    //   - treat value as paise
+    //   - convert to rupees
+    //   - cap it by amountToPay (can't discount more than amount)
+    let bestDiscount = 0;
+
     for (const o of offers) {
-      if ((o.value ?? 0) > (bestOffer.value ?? 0)) {
-        bestOffer = o;
+      const rawValuePaise = o.value ?? 0;
+      const discountRupees = rawValuePaise / 100;
+
+      // cap discount by amountToPay
+      const effectiveDiscount = Math.min(discountRupees, amountToPay);
+
+      if (effectiveDiscount > bestDiscount) {
+        bestDiscount = effectiveDiscount;
       }
     }
 
-    const bestDiscountPaise = bestOffer.value ?? 0;
-    const highestDiscountAmount = bestDiscountPaise / 100; // convert to rupees
-
-    // 4) Respond with amount + meta info about the best offer
     return res.json({
-      highestDiscountAmount,
-      bestOffer: {
-        bankName: bestOffer.bankName,
-        offerType: bestOffer.type,
-        title: bestOffer.title,
-        paymentInstrument: bestOffer.paymentInstrument,
-        flipkartOfferId: bestOffer.flipkartOfferId,
-        rawValuePaise: bestOffer.value
-      }
+      highestDiscountAmount: bestDiscount
     });
   } catch (err) {
     console.error("Error in GET /highest-discount:", err);
