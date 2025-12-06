@@ -3,71 +3,70 @@ import { Offer } from "../models/Offer";
 
 const router = Router();
 
-// GET /highest-discount?amountToPay=10000&bankName=HDFC&paymentInstrument=EMI_OPTIONS (optional)
+// GET /highest-discount?amountToPay=10000&bankName=HDFC&paymentInstrument=EMI_OPTIONS(optional)
 router.get("/", async (req, res) => {
   const amountToPay = Number(req.query.amountToPay);
   const bankName = req.query.bankName as string | undefined;
   const paymentInstrument = req.query.paymentInstrument as string | undefined;
 
-  if (!amountToPay) {
-    return res
-      .status(400)
-      .json({ error: "amountToPay is required and must be a number" });
+  // Basic validation
+  if (!amountToPay || Number.isNaN(amountToPay)) {
+    return res.status(400).json({
+      error: "amountToPay is required and must be a number"
+    });
   }
 
   if (!bankName) {
-    return res.status(400).json({ error: "bankName is required" });
+    return res.status(400).json({
+      error: "bankName is required"
+    });
   }
 
   try {
-    // 1. Build query
+    // 1) Build Mongo query
     const query: any = { bankName };
 
     if (paymentInstrument) {
       query.paymentInstrument = paymentInstrument;
     }
 
-    // 2. Fetch all matching offers from DB
+    // 2) Fetch all offers for that bank (and instrument, if provided)
     const offers = await Offer.find(query);
 
     if (offers.length === 0) {
       return res.json({
         highestDiscountAmount: 0,
         bestOffer: null,
-        message: "No matching offers found",
+        message: "No matching offers found for given bank/paymentInstrument"
       });
     }
 
-    // 3. Find the offer that gives the highest discount
-    let bestDiscount = 0;
-    let bestOffer: (typeof offers)[number] | null = null;
-
-    for (const off of offers) {
-      // For this assignment, we treat `value` as the discount amount / max benefit.
-      const discountValue = off.value ?? 0;
-
-      // You could add more complex logic here later if needed
-      if (discountValue > bestDiscount) {
-        bestDiscount = discountValue;
-        bestOffer = off;
+    // 3) Find offer with highest 'value'
+    // Flipkart 'value' is in paise (e.g. 50000 = ₹500), so we convert at the end
+    let bestOffer = offers[0];
+    for (const o of offers) {
+      if ((o.value ?? 0) > (bestOffer.value ?? 0)) {
+        bestOffer = o;
       }
     }
 
-    // 4. Build response object with extra info about the best offer
+    const bestDiscountPaise = bestOffer.value ?? 0;
+    const highestDiscountAmount = bestDiscountPaise / 100; // convert to rupees
+
+    // 4) Respond with amount + meta info about the best offer
     return res.json({
-      highestDiscountAmount: bestDiscount,
-      bestOffer: bestOffer
-        ? {
-            bankName: bestOffer.bankName,          // which bank/card family
-            offerType: bestOffer.type,             // INSTANT_DISCOUNT / CASHBACK_ON_CARD / etc.
-            title: bestOffer.title,                // short text like "Save ₹500"  
-            paymentInstrument: bestOffer.paymentInstrument, // CREDIT / EMI_OPTIONS / NET_OPTIONS / UPI (if you store it)
-            flipkartOfferId: bestOffer.flipkartOfferId,
-          }
-        : null,
+      highestDiscountAmount,
+      bestOffer: {
+        bankName: bestOffer.bankName,
+        offerType: bestOffer.type,
+        title: bestOffer.title,
+        paymentInstrument: bestOffer.paymentInstrument,
+        flipkartOfferId: bestOffer.flipkartOfferId,
+        rawValuePaise: bestOffer.value
+      }
     });
   } catch (err) {
-    console.error("Error in GET /highest-discount", err);
+    console.error("Error in GET /highest-discount:", err);
     return res.status(500).json({ error: "Internal server error" });
   }
 });

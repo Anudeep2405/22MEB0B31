@@ -3,77 +3,98 @@ import { Offer } from "../models/Offer";
 
 const router = Router();
 
+// Helper: safely get nested properties
+function getOfferListFromFlipkartResponse(data: any) {
+  if (!data?.items || !Array.isArray(data.items)) return [];
+
+  const offerListItem = data.items.find((i: any) => i.type === "OFFER_LIST");
+  return offerListItem?.data?.offers?.offerList ?? [];
+}
+
 // POST /offer
+// Body: { "flipkartOfferApiResponse": { ...full Flipkart PAYMENT_OPTIONS JSON... } }
 router.post("/", async (req, res) => {
   const data = req.body.flipkartOfferApiResponse;
 
   if (!data) {
-    return res.status(400).json({ error: "flipkartOfferApiResponse is required" });
+    return res
+      .status(400)
+      .json({ error: "flipkartOfferApiResponse is required in request body" });
   }
 
   try {
-    // --- 1. Extract offer summary list ---
+    // 1) Build a map: offerId -> { type, value }
     const summary = data?.viewTracking?.offersAvailable?.offerSummary ?? [];
-    const summaryById = new Map<string, { type: any; value: any }>(
-      summary.map((s: any) => [s.id, { type: s.type, value: s.value }])
-    );
+    const summaryById = new Map<string, { type: string | null; value: number | null }>();
 
-    // --- 2. Extract detailed offerList from items ---
-    const offerListItem = data.items?.find((i: any) => i.type === "OFFER_LIST");
-    const offerList = offerListItem?.data?.offers?.offerList ?? [];
+    for (const s of summary) {
+      summaryById.set(s.id, {
+        type: s.type ?? null,
+        value: typeof s.value === "number" ? s.value : null
+      });
+    }
+
+    // 2) Get the detailed offers list (what user sees in "Offers on online payment")
+    const offerList = getOfferListFromFlipkartResponse(data);
 
     let noOfOffersIdentified = 0;
     let noOfNewOffersCreated = 0;
 
     for (const raw of offerList) {
-      const id = raw.offerDescription.id;
-      const meta = summaryById.get(id);
+      const flipkartOfferId = raw?.offerDescription?.id;
+      const title = raw?.offerText?.text;
 
-      // Base offer data
+      if (!flipkartOfferId || !title) continue;
+
+      const meta = summaryById.get(flipkartOfferId) ?? { type: null, value: null };
+
       const baseOffer = {
-        flipkartOfferId: id,
-        title: raw.offerText.text,
-        description: raw.offerDescription.text,
-        type: meta?.type ?? null,
-        value: meta?.value ?? null,
+        flipkartOfferId,
+        type: meta.type,
+        value: meta.value ?? 0,
+        title
+        // paymentInstrument: null for now (bonus later)
       };
 
       const providers: string[] = raw.provider ?? [];
-
-      // If no provider (generic offer), treat as bankName = null
+      // If no provider, treat it as a generic offer (bankName = null)
       const banks = providers.length ? providers : [null];
 
       for (const bankName of banks) {
         noOfOffersIdentified++;
 
         try {
-          const offerData: any = {
-            ...baseOffer,
-            paymentInstrument: null, // can be enhanced in bonus section
-          };
-          
-          if (bankName !== null) {
-            offerData.bankName = bankName;
-          }
-          
-          const created = await Offer.create(offerData);
+          // Upsert to avoid duplicates:
+          const result = await Offer.updateOne(
+            {
+              flipkartOfferId,
+              bankName,
+              paymentInstrument: null
+            },
+            {
+              $setOnInsert: {
+                ...baseOffer,
+                bankName,
+                paymentInstrument: null
+              }
+            },
+            { upsert: true }
+          );
 
-          if (created) noOfNewOffersCreated++;
-        } catch (err: any) {
-          // Duplicate key error → skip
-          if (err.code === 11000) {
-            continue;
-          } else {
-            console.error("Unexpected DB error:", err);
+          // result.upsertedCount === 1 means a new document was inserted
+          if ((result as any).upsertedCount === 1) {
+            noOfNewOffersCreated++;
           }
+        } catch (err) {
+          console.error("DB error while upserting offer:", err);
         }
       }
     }
 
     return res.json({
-      message: "Offers processed",
+      message: "Offers processed successfully",
       noOfOffersIdentified,
-      noOfNewOffersCreated,
+      noOfNewOffersCreated
     });
   } catch (err) {
     console.error("Error in POST /offer:", err);
