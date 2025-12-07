@@ -6,8 +6,9 @@ const offerSchema = new Schema(
     bankName: { type: String, default: null },           // SBI / HDFC / FLIPKARTAXISBANK / null
     value: { type: Number, default: 0 },                 // numeric benefit from summary.value
     type: { type: String, default: null },               // INSTANT_DISCOUNT / CASHBACK_ON_CARD / ...
-    title: { type: String, required: true },             // "Save ₹500"
-    paymentInstrument: { type: String, default: null }   // CREDIT / EMI_OPTIONS / NET_OPTIONS / UPI (bonus)
+    title: { type: String, required: true },             // "Save 9500"
+    paymentInstrument: { type: String, default: null },  // CREDIT / EMI_OPTIONS / NET_OPTIONS / UPI (bonus)
+    offerDescription: { type: String, default: null }    // Full offer description text
   },
   { timestamps: false }
 );

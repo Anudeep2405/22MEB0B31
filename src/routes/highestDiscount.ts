@@ -29,14 +29,14 @@ router.get("/", async (req, res) => {
       .json({ error: "amountToPay is required and must be a number" });
   }
 
-  if (!bankName) {
-    return res.status(400).json({ error: "bankName is required" });
-  }
+  // bankName is now optional
 
   try {
     // 1) Build query: offers that support this bank (and instrument, if provided)
-    const query: any = { bankName };
-
+    const query: any = {};
+    if (bankName) {
+      query.bankName = bankName;
+    }
     if (paymentInstrument) {
       query.paymentInstrument = paymentInstrument;
     }
@@ -45,34 +45,61 @@ router.get("/", async (req, res) => {
 
     if (offers.length === 0) {
       // No matching offers → discount is 0
-      return res.json({ highestDiscountAmount: 0 });
+      return res.json({ highestDiscountAmount: 0, offerDescription: null, bankName: null, title: null, paymentInstrument: null });
     }
 
-    // 2) Find best offer and compute discount
-    //
-    // We stored Flipkart's "value" field in Offer.value.
-    // In their JSON it looks like paise (e.g. 50000 => ₹500),
-    // but the assignment says it's OK if our calculation doesn't
-    // match Flipkart exactly. We'll:
-    //   - treat value as paise
-    //   - convert to rupees
-    //   - cap it by amountToPay (can't discount more than amount)
+    // Find best offer and compute actual discount
     let bestDiscount = 0;
+    let bestOffer = null;
 
     for (const o of offers) {
       const rawValuePaise = o.value ?? 0;
       const discountRupees = rawValuePaise / 100;
+      let minOrderValue = 0;
+      let maxDiscount = discountRupees;
+      let percentDiscount = null;
 
-      // cap discount by amountToPay
-      const effectiveDiscount = Math.min(discountRupees, amountToPay);
+      // Parse offerDescription for min order value and max discount
+      const desc = o.offerDescription ?? "";
+      // Match 'Min Order Value ₹Z' or 'Min. Txn Value: ₹Z'
+      const minOrderMatch = desc.match(/Min(?:\.|imum)?(?:\sOrder|\sTxn)?(?:\sValue)?[:]?\s*₹([\d,]+)/i);
+      if (minOrderMatch) {
+        minOrderValue = parseInt(minOrderMatch[1].replace(/,/g, ""), 10);
+      }
+      // Match 'Up to ₹X', 'upto ₹X', 'Max. discount ₹X', 'Max discount ₹X'
+      const maxDiscountMatch = desc.match(/(?:Up to|upto|Max(?:\.|imum)?(?:\sdiscount)?)[^₹]*₹([\d,]+)/i);
+      if (maxDiscountMatch) {
+        maxDiscount = parseInt(maxDiscountMatch[1].replace(/,/g, ""), 10);
+      }
+      // Match percent discount: '10% off', '5% cashback'
+      const percentMatch = desc.match(/(\d+)%\s*(?:off|cashback)/i);
+      if (percentMatch) {
+        percentDiscount = parseInt(percentMatch[1], 10) / 100;
+      }
 
-      if (effectiveDiscount > bestDiscount) {
-        bestDiscount = effectiveDiscount;
+      // Only consider if amountToPay >= minOrderValue
+      if (amountToPay < minOrderValue) continue;
+
+      // Calculate actual discount
+      let actualDiscount = 0;
+      if (percentDiscount !== null) {
+        actualDiscount = Math.min(amountToPay * percentDiscount, maxDiscount);
+      } else {
+        actualDiscount = Math.min(maxDiscount, amountToPay);
+      }
+
+      if (actualDiscount > bestDiscount) {
+        bestDiscount = actualDiscount;
+        bestOffer = o;
       }
     }
 
     return res.json({
-      highestDiscountAmount: bestDiscount
+      highestDiscountAmount: bestDiscount,
+      offerDescription: bestOffer?.offerDescription ?? null,
+      bankName: bestOffer?.bankName ?? null,
+      title: bestOffer?.title ?? null,
+      paymentInstrument: bestOffer?.paymentInstrument ?? null
     });
   } catch (err) {
     console.error("Error in GET /highest-discount:", err);
