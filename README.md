@@ -108,7 +108,7 @@ To handle 1,000 requests per second:
 
 - **Caching:** I would use an in-memory cache like redis for frequently accessed discount results to reduce database load.
 - **Horizontal Scaling:** Can use load balancer and deploy multiple instances of the API.
-- **Connection Pooling:** Optimize MongoDB connection pooling for concurrent requests. Set appropriate pool size in your MongoDB driver (e.g., Mongoose's maxPoolSize option) based on expected traffic.
+- **Connection Pooling:** Optimize MongoDB connection pooling for concurrent requests. Set appropriate pool size in  MongoDB driver (e.g., Mongoose's maxPoolSize option) based on expected traffic.
 - **Async Processing:** i would use asynchronous logic and non-blocking I/O throughout the stack.
 
 ## Improvements with More Time
@@ -117,7 +117,7 @@ To handle 1,000 requests per second:
 - Add authentication and authorization for sensitive endpoints.
 - Improve offer parsing to handle more edge cases and formats.
 - Use batch upserts instead of per-offer upserts to reduce DB round-trips.
-- Can use NLP to parse faster when text is unstructured but no necessary in this case.
+- Can use NLP to parse faster when text is unstructured but it is no necessary in this case.
 
 ---
 For any questions or clarifications, please refer to the code or contact : anudeep249@gmail.com.
