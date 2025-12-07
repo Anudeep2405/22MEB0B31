@@ -28,7 +28,7 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
    ```powershell
    npm run dev
    ```
-   The server will start on `http://localhost:3000` by default.
+   The server will start on `http://localhost:4000` by default.
 
 5. **Sample Data for Testing:**
    - If you do not have a Flipkart API response, you can use the sample JSON files provided in the `sample-data` folder (`flipkart_Api_Response.json`, etc.).
@@ -46,7 +46,7 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
    - **GET /highest-discount**
      - Example query:
      ```bash
-     curl "http://localhost:3000/highestDiscount?amount=50000&bankName=HDFC&paymentInstrument=CREDIT"
+     curl "http://localhost:3000/highestDiscount?amountToPay=50000&bankName=HDFC&paymentInstrument=CREDIT"
      ```
    - Adjust query parameters as needed for your test case.
 
