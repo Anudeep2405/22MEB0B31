@@ -79,6 +79,10 @@ function getOfferPaymentInstrumentMap(data: any) {
         map.set(offerId, "CREDIT");
         continue;
       }
+      if (desc.includes("debit card") || title.includes("debit card")) {
+        map.set(offerId, "DEBIT");
+        continue;
+      }
       if (desc.includes("upi") || title.includes("upi")) {
         map.set(offerId, "UPI");
         continue;
@@ -206,7 +210,7 @@ router.post("/", async (req, res) => {
             },
             { upsert: true }
           );
-          
+
           // result.upsertedCount === 1 means a new document was inserted
           if ((result as any).upsertedCount === 1) {
             noOfNewOffersCreated++;

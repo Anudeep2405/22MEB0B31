@@ -88,7 +88,7 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
 ## Assumptions Made
 - Payment instrument mapping prefers structured fields from the Flipkart API (such as instrumentType and provider metadata) and uses offer description parsing only as a fallback when structured data is missing or unclear. No Cost EMI offers are treated as a separate instrument to be able to filter easily.
 - Actual discount is calculated from offer terms, not just the maximum possible value (e.g., considers min order, percent, max discount).
-- No Cost EMI offers do not provide a cash discount unless explicitly stated.
+- No Cost EMI offers do not provide a cash discount unless explicitly stated so discount is calculated as the value of the offer in json file for simplicity,can edit API to return offers with no cost emi as it is a payment instrument.
 - Offers are uniquely identified by offerId, bank, and instrument.
 - The API is designed to work with Flipkart's sample response structure.
 - You must connect your own MongoDB instance using the URI in the `.env` file for the API to function.

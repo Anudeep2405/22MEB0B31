@@ -88,6 +88,8 @@ router.get("/", async (req, res) => {
         const feeMatch = desc.match(/(interest|processing fee|fee waiver)[^₹]*₹([\d,]+)/i);
         if (feeMatch) {
           actualDiscount = parseInt(feeMatch[2].replace(/,/g, ""), 10);
+        } else if (o.value) {
+          actualDiscount = o.value / 100;
         }
         if (actualDiscount > bestDiscount) {
           bestDiscount = actualDiscount;
