@@ -61,6 +61,7 @@ router.get("/", async (req, res) => {
 
       // Parse offerDescription for min order value and max discount
       const desc = o.offerDescription ?? "";
+      const title = o.title ?? "";
       // Match 'Min Order Value ₹Z' or 'Min. Txn Value: ₹Z'
       const minOrderMatch = desc.match(/Min(?:\.|imum)?(?:\sOrder|\sTxn)?(?:\sValue)?[:]?\s*₹([\d,]+)/i);
       if (minOrderMatch) {
@@ -79,6 +80,21 @@ router.get("/", async (req, res) => {
 
       // Only consider if amountToPay >= minOrderValue
       if (amountToPay < minOrderValue) continue;
+
+      // Special handling for No Cost EMI
+      if (desc.toLowerCase().includes("no cost emi") || title.toLowerCase().includes("no cost emi")) {
+        // Only apply discount if description mentions a fee/interest waiver
+        let actualDiscount = 0;
+        const feeMatch = desc.match(/(interest|processing fee|fee waiver)[^₹]*₹([\d,]+)/i);
+        if (feeMatch) {
+          actualDiscount = parseInt(feeMatch[2].replace(/,/g, ""), 10);
+        }
+        if (actualDiscount > bestDiscount) {
+          bestDiscount = actualDiscount;
+          bestOffer = o;
+        }
+        continue;
+      }
 
       // Calculate actual discount
       let actualDiscount = 0;

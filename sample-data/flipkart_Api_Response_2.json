@@ -1,0 +1,927 @@
+{
+    "viewTracking": {
+        "checkouttype": "normalcheckout"
+    },
+    "pageDetails": {
+        "pageTitle": {
+            "title": "Select Bank"
+        },
+        "trustCalloutDetails": {
+            "title": "100% Secure",
+            "image": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/lock-icon.svg",
+            "displayType": "BOTTOM_SHEET",
+            "content": {
+                "type": "SECURE_INFO_BOTTOMSHEET",
+                "header": {
+                    "title": "100% safe and secure payments"
+                },
+                "information": {
+                    "secureImage": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/secure-shield-icon-31082023.svg",
+                    "description": "Flipkart payment system is complaint with the Payment Card Industry Data Security Standards (PCI DSS) and uses SSL 256 bit encryption while saving your card information on our highly secure systems. Read our Privacy Policy to learn more.",
+                    "footerImages": [
+                        "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/pci-complaint-logo-31082023.svg",
+                        "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/ssl-encryption-logo-31082023.svg"
+                    ]
+                }
+            }
+        },
+        "theme": "flipkart"
+    },
+    "responseStatus": "SUCCESS",
+    "abExperiments": [
+        {
+            "abId": "STG|prestart|12f6b413|h",
+            "expId": "fraud_check"
+        }
+    ],
+    "searchInfo": {
+        "placeholder": "Search for bank",
+        "searchFields": [
+            "bankTitle"
+        ]
+    },
+    "items": [
+        {
+            "sectionTitle": "Top banks",
+            "showLimit": 10,
+            "banks": [
+                {
+                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
+                    "bankCode": "SBI",
+                    "title": "State Bank of India",
+                    "selected": true,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "Top banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/HDFC.svg",
+                    "bankCode": "HDFC",
+                    "title": "HDFC Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "Top banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/ICICI.svg",
+                    "bankCode": "ICICI",
+                    "title": "ICICI Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "Top banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/KOTAK.svg",
+                    "bankCode": "KOTAK",
+                    "title": "Kotak Mahindra Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "Top banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
+                    "bankCode": "AXIS",
+                    "title": "Axis Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "Top banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/FEDERAL.svg",
+                    "bankCode": "FEDERALBANK",
+                    "title": "Federal Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "Top banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/IOB.svg",
+                    "bankCode": "IOB",
+                    "title": "Indian Overseas Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "Top banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/INB.svg",
+                    "bankCode": "INDIANBANK",
+                    "title": "Indian Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "Top banks",
+                        "section": "generic"
+                    }
+                }
+            ]
+        },
+        {
+            "sectionTitle": "All other banks",
+            "showLimit": 10,
+            "banks": [
+                {
+                    "logo": "",
+                    "bankCode": "AIRTELMONEY",
+                    "title": "Airtel Payments Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "AUSMALLFINBANK",
+                    "title": "AU Small Finance Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "BANDHAN",
+                    "title": "Bandhan Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "BASSIENCATHOLICCOOPB",
+                    "title": "Bassien Catholic Co-Operative Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "BNPPARIBAS",
+                    "title": "BNP Paribas",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "BOBAHRAIN",
+                    "title": "Bank of Bahrain and Kuwait",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "BOBARODA",
+                    "title": "BOBCARD",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "BOBARODAC",
+                    "title": "Bank of Baroda Corporate",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "BOBARODAR",
+                    "title": "Bank of Baroda Retail",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "BOI",
+                    "title": "Bank of India",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "BOM",
+                    "title": "Bank of Maharashtra",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "CANARA",
+                    "title": "Canara Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "CATHOLICSYRIAN",
+                    "title": "Catholic Syrian Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "CBI",
+                    "title": "Central Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "CITYUNION",
+                    "title": "City Union Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "CORPORATION",
+                    "title": "Corporation Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "COSMOS",
+                    "title": "Cosmos Co-op Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "DBS",
+                    "title": "DBS Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "DCB",
+                    "title": "DCB BANK LTD",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "DENA",
+                    "title": "Dena Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "DEUTSCHE",
+                    "title": "Deutsche Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "DHANBANK",
+                    "title": "Dhanalakshmi Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "HSBC",
+                    "title": "HSBC",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "IDBI",
+                    "title": "IDBI Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "IDFC",
+                    "title": "IDFC FIRST Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "INDUSIND",
+                    "title": "IndusInd Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "JANATABANKPUNE",
+                    "title": "JANATA SAHAKARI BANK LTD PUNE",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "JKBANK",
+                    "title": "J&K Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "KARNATAKA",
+                    "title": "Karnataka Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "KARURVYSYA",
+                    "title": "Karur Vysya Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "LAKSHMIVILAS",
+                    "title": "Lakshmi Vilas Bank - Retail",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "LAKSHMIVILASC",
+                    "title": "Lakshmi Vilas Bank - Corporate",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "PNB",
+                    "title": "Punjab National Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "PNBC",
+                    "title": "Punjab National Bank Corporate",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "PNSB",
+                    "title": "Punjab & Sind Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "PUNJABMAHA",
+                    "title": "Punjab & Maharashtra Co-op Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "RATNAKAR",
+                    "title": "RBL Bank Limited",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "RBS",
+                    "title": "RBS",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "SARASWAT",
+                    "title": "Saraswat Co-op Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "SHAMRAOVITHAL",
+                    "title": "Shamrao Vithal Co-op Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "SHIVAMERCOOP",
+                    "title": "Shivalik Mercantile Co-op Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "SOUTHINDIAN",
+                    "title": "The South Indian Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "STANC",
+                    "title": "Standard Chartered Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "TMBANK",
+                    "title": "Tamilnad Mercantile Bank Limited",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "TNMERCANTILE",
+                    "title": "Tamil Nadu Merchantile Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "TNSC",
+                    "title": "TNSC Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "UCO",
+                    "title": "UCO Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "UNIONBANK",
+                    "title": "Union Bank of India",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "YESBANK",
+                    "title": "YES BANK",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                },
+                {
+                    "logo": "",
+                    "bankCode": "ZOROACOPBANK",
+                    "title": "The Zoroastrian Co-Operative Bank",
+                    "selected": false,
+                    "applicable": true,
+                    "payButtonDetails": {
+                        "irisKey": "payAmount",
+                        "disablePayButton": false
+                    },
+                    "clickTracking": {
+                        "instrumentType": "All other banks",
+                        "section": "generic"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -11,12 +11,12 @@ function getOfferListFromFlipkartResponse(data: any) {
   return offerListItem?.data?.offers?.offerList ?? [];
 }
 
-// Helper: build offerId -> paymentInstrument mapping
+// Helper: build offerId -> paymentInstrument mapping (prefer structured data)
 function getOfferPaymentInstrumentMap(data: any) {
   const map = new Map();
   if (!data?.items || !Array.isArray(data.items)) return map;
 
-  // First, map offers nested in PAYMENT_OPTIONs (EMI_OPTIONS, etc.)
+  // First, use structured PAYMENT_OPTION instrumentType if available
   for (const item of data.items) {
     if (item.type === "PAYMENT_OPTION" && item.data?.instrumentType) {
       const instrumentType = item.data.instrumentType;
@@ -36,52 +36,102 @@ function getOfferPaymentInstrumentMap(data: any) {
   }
 
   // Next, map offers in OFFER_LIST to their parent PAYMENT_OPTION instrumentType if possible
-  // Find OFFER_LIST and PAYMENT_OPTION items
   const offerListItem = data.items.find((i: any) => i.type === "OFFER_LIST");
   if (offerListItem?.data?.offers?.offerList) {
     const offerList = offerListItem.data.offers.offerList;
-    for (const item of data.items) {
-      if (item.type === "PAYMENT_OPTION" && item.data?.instrumentType) {
-        const instrumentType = item.data.instrumentType;
-        for (const raw of offerList) {
-          const offerId = raw?.offerDescription?.id;
-          if (!offerId || map.has(offerId)) continue;
-
-          // Match by provider or description
+    for (const raw of offerList) {
+      const offerId = raw?.offerDescription?.id;
+      if (!offerId || map.has(offerId)) continue;
+      // Try to find a PAYMENT_OPTION with matching provider or metadata
+      let matchedInstrument = null;
+      for (const item of data.items) {
+        if (item.type === "PAYMENT_OPTION" && item.data?.instrumentType) {
+          // If providers match, assign instrumentType
           const providers = raw.provider ?? [];
-          const desc = (raw.offerDescription?.text ?? "").toLowerCase();
-          const title = (raw.offerText?.text ?? "").toLowerCase();
-
-          // EMI_OPTIONS: match if description/title contains 'emi'
-          if (instrumentType === "EMI_OPTIONS") {
-            if (desc.includes("emi") || title.includes("emi")) {
-              map.set(offerId, instrumentType);
-            }
-          }
-          // CREDIT: match if not already mapped as EMI_OPTIONS, and description/title contains 'credit card' or provider is a known credit card bank
-          else if (instrumentType === "CREDIT") {
-            // Only map as CREDIT if not already mapped as EMI_OPTIONS
-            if (!map.has(offerId) && (desc.includes("credit card") || title.includes("credit card") || (providers as string[]).some((p: string) => ["SBI","HDFC","ICICI","AXIS","KOTAK","FLIPKARTSBI","FLIPKARTAXISBANK"].includes(p)))) {
-              map.set(offerId, instrumentType);
-            }
-          }
-          // UPI: match if description/title contains 'upi'
-          else if (instrumentType === "UPI") {
-            if (desc.includes("upi") || title.includes("upi")) {
-              map.set(offerId, instrumentType);
-            }
-          }
-          // NET_OPTIONS: match if description/title contains 'net banking'
-          else if (instrumentType === "NET_OPTIONS") {
-            if (desc.includes("net banking") || title.includes("net banking")) {
-              map.set(offerId, instrumentType);
+          if (item.data.content?.options) {
+            for (const opt of item.data.content.options) {
+              const optProviders = opt.provider ?? [];
+              if (providers.some((p: string) => optProviders.includes(p))) {
+                matchedInstrument = item.data.instrumentType;
+                break;
+              }
             }
           }
         }
+        if (matchedInstrument) break;
+      }
+      if (matchedInstrument) {
+        map.set(offerId, matchedInstrument);
+        continue;
+      }
+      // Fallback: parse description/title if structured mapping fails
+      const desc = (raw.offerDescription?.text ?? "").toLowerCase();
+      const title = (raw.offerText?.text ?? "").toLowerCase();
+      if (desc.includes("no cost emi") || title.includes("no cost emi")) {
+        map.set(offerId, "NO_COST_EMI");
+        continue;
+      }
+      if (desc.includes("emi") || title.includes("emi")) {
+        map.set(offerId, "EMI_OPTIONS");
+        continue;
+      }
+      if (desc.includes("credit card") || title.includes("credit card")) {
+        map.set(offerId, "CREDIT");
+        continue;
+      }
+      if (desc.includes("upi") || title.includes("upi")) {
+        map.set(offerId, "UPI");
+        continue;
+      }
+      if (desc.includes("net banking") || title.includes("net banking")) {
+        map.set(offerId, "NET_OPTIONS");
+        continue;
       }
     }
   }
   return map;
+}
+
+// Helper: parse offer details in a single pass
+function parseOfferDetails(raw: any, meta: { type: string | null; value: number | null }, paymentInstrument: string | null) {
+  const offerDescription = raw?.offerDescription?.text ?? "";
+  const title = raw?.offerText?.text ?? "";
+  const providers: string[] = raw.provider ?? [];
+
+  // Extract discount percent, max discount, min order, and No Cost EMI flag in one pass
+  let percent = null, maxDiscount = null, minOrder = null, isNoCostEmi = false;
+  const descLower = offerDescription.toLowerCase();
+  const titleLower = title.toLowerCase();
+
+  // Discount percent
+  const percentMatch = offerDescription.match(/(\d+)%/);
+  if (percentMatch) percent = parseInt(percentMatch[1]);
+
+  // Max discount
+  const maxMatch = offerDescription.match(/up to [₹₹]?([\d,]+)/i);
+  if (maxMatch) maxDiscount = parseInt(maxMatch[1].replace(/,/g, ""));
+
+  // Min order
+  const minOrderMatch = offerDescription.match(/on orders? of [₹₹]?([\d,]+)/i);
+  if (minOrderMatch) minOrder = parseInt(minOrderMatch[1].replace(/,/g, ""));
+
+  // No Cost EMI flag
+  if (descLower.includes("no cost emi") || titleLower.includes("no cost emi") || paymentInstrument === "NO_COST_EMI") {
+    isNoCostEmi = true;
+  }
+
+  return {
+    offerDescription,
+    title,
+    providers,
+    percent,
+    maxDiscount,
+    minOrder,
+    isNoCostEmi,
+    paymentInstrument,
+    type: meta.type,
+    value: meta.value ?? 0
+  };
 }
 
 // POST /offer
@@ -117,26 +167,16 @@ router.post("/", async (req, res) => {
 
     for (const raw of offerList) {
       const flipkartOfferId = raw?.offerDescription?.id;
-      const title = raw?.offerText?.text;
-      const offerDescription = raw?.offerDescription?.text ?? null;
 
-      if (!flipkartOfferId || !title) continue;
+      if (!flipkartOfferId) continue;
 
       const meta = summaryById.get(flipkartOfferId) ?? { type: null, value: null };
       const paymentInstrument = offerPaymentInstrumentMap.get(flipkartOfferId) ?? null;
 
-      const baseOffer = {
-        flipkartOfferId,
-        type: meta.type,
-        value: meta.value ?? 0,
-        title,
-        paymentInstrument,
-        offerDescription
-      };
+      // Parse all offer details in one pass
+      const details = parseOfferDetails(raw, meta, paymentInstrument);
 
-      const providers: string[] = raw.provider ?? [];
-      // If no provider, treat it as a generic offer (bankName = null)
-      const banks = providers.length ? providers : [null];
+      const banks = details.providers.length ? details.providers : [null];
 
       for (const bankName of banks) {
         noOfOffersIdentified++;
@@ -151,9 +191,17 @@ router.post("/", async (req, res) => {
             },
             {
               $setOnInsert: {
-                ...baseOffer,
+                flipkartOfferId,
                 bankName,
-                paymentInstrument
+                paymentInstrument,
+                title: details.title,
+                offerDescription: details.offerDescription,
+                type: details.type,
+                value: details.value,
+                percent: details.percent,
+                maxDiscount: details.maxDiscount,
+                minOrder: details.minOrder,
+                isNoCostEmi: details.isNoCostEmi
               }
             },
             { upsert: true }
