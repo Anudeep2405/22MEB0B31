@@ -46,7 +46,7 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
    - **GET /highest-discount**
      - Example query:
      ```bash
-     curl "http://localhost:3000/highest-discount?productId=PRODUCT123&bankName=HDFC&paymentInstrument=CREDIT"
+     curl "http://localhost:3000/highestDiscount?amount=50000&bankName=HDFC&paymentInstrument=CREDIT"
      ```
    - Adjust query parameters as needed for your test case.
 
