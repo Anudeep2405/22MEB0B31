@@ -77,7 +77,7 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
 - **Response:**
   ```json
   {
-    "discount": 500,
+    "highestDiscountAmount": 500,
     "offerDescription": "10% off up to ₹500 on Credit Cards",
     "bank": "HDFC",
     "title": "Credit Card Offer",
