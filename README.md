@@ -1,7 +1,7 @@
 # PiePay Backend Assignment
 
 ## Project Overview
-This project is a backend API for ingesting and processing e-commerce offers, specifically from Flipkart, and calculating the highest discount available to a user based on payment instruments and offer terms. It uses Node.js, Express.js, TypeScript, and MongoDB (via Mongoose).
+This project is a backend API for ingesting and processing e-commerce offers, specifically from Flipkart, and calculating the highest discount available to a user based on amount,payment instruments and bank name. It uses Node.js, Express.js, TypeScript, and MongoDB (via Mongoose).
 
 ## Setup Instructions
 1. **Clone the repository:**
