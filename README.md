@@ -96,7 +96,7 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
 ## Design Choices
 - **Framework:** Chose Node.js with Express.js for its simplicity, scalability, and wide adoption for REST APIs. TypeScript was used for type safety and maintainability.
 - **Database:** MongoDB was selected for its flexibility with semi-structured data and ease of integration with Mongoose. The schema uses a unique index on (offerId, bank, instrument) to prevent duplicate offers and ensure efficient lookups.
-- **Parsing Logic:** Custom parsing of offer descriptions and payment options ensures accurate mapping and discount calculation, tailored to Flipkart's data format.
+- **Parsing Logic:** Payment instrument mapping and discount calculation primarily leverage structured fields from the Flipkart API (such as instrumentType and provider metadata) for accuracy and efficiency. Text parsing of offer descriptions is used only as a fallback when structured data is unavailable, ensuring robust and optimal processing tailored to Flipkart's data format.
 
 ## Scaling GET /highest-discount Endpoint
 To handle 1,000 requests per second:
