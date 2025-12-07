@@ -82,8 +82,10 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
   - `amountToPay` (required){Total amount to pay without applying any offers}
   - `bankName` (optional){Bank name}
   - `paymentInstrument` (optional){Payment instrument}
-  
-  - paymentInstrument can be CREDIT,EMI_OPTIONS, DEBIT, UPI, or NO_COST_EMI.
+
+  - paymentInstrument can be CREDIT(given priority over debit as it is explicitly mentioned in assignment),
+  - EMI_OPTIONS(no cost emi offers are excluded from this as its discount amount cannot be calculated easily and returning max discount is tricky if we consider its value given in json file which doesnt seem to exactly match the discount amount),
+  - DEBIT, UPI, or NO_COST_EMI are other payment instruments used to filter offers if necessary.
   - bankName can be any bank name.
 
 - **Response:**

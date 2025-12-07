@@ -67,6 +67,7 @@ function getOfferPaymentInstrumentMap(data: any) {
       // Fallback: parse description/title if structured mapping fails
       const desc = (raw.offerDescription?.text ?? "").toLowerCase();
       const title = (raw.offerText?.text ?? "").toLowerCase();
+      const hasCard = desc.includes("card") || title.includes("card");
       if (desc.includes("no cost emi") || title.includes("no cost emi")) {
         map.set(offerId, "NO_COST_EMI");
         continue;
@@ -75,11 +76,11 @@ function getOfferPaymentInstrumentMap(data: any) {
         map.set(offerId, "EMI_OPTIONS");
         continue;
       }
-      if (desc.includes("credit card") || title.includes("credit card")) {
+      if (hasCard && desc.includes("credit") || title.includes("credit")) {
         map.set(offerId, "CREDIT");
         continue;
       }
-      if (desc.includes("debit card") || title.includes("debit card")) {
+      if (hasCard && desc.includes("debit") || title.includes("debit")) {
         map.set(offerId, "DEBIT");
         continue;
       }
