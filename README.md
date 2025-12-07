@@ -38,18 +38,21 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
 6. **Example API Requests:**
    - **POST /offer**
      - Use a tool like Postman or cURL:
+     use sample data from sample-data folder if json response is not available.
      ```bash
-     curl -X POST http://localhost:3000/offer \
+     curl -X POST http://localhost:4000/offer \
        -H "Content-Type: application/json" \
        -d '{ "flipkartOfferApiResponse": <paste-sample-json-here> }'
      ```
    - **GET /highest-discount**
      - Example query:
      ```bash
-     curl "http://localhost:3000/highestDiscount?amountToPay=50000&bankName=HDFC&paymentInstrument=CREDIT"
+     curl "http://localhost:4000/highestDiscount?amountToPay=50000&bankName=HDFC&paymentInstrument=CREDIT"
      ```
    - Adjust query parameters as needed for your test case.
+   - parameters are case sensitive.
 
+   
 ## API Endpoints and Usage
 
 ### 1. Ingest Offers
@@ -64,15 +67,24 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
     "PAYMENT_OPTION": { ... }
   }
   ```
-- **Response:** `{ message: "Offers ingested successfully" }`
+- **Response:** 
+```json
+{ "message": "Offers ingested successfully",
+  "noOfOffersIdentified": <no of offers identified>,
+  "noOfNewOffersCreated": <no of new offers created>
+}
+```
 
 ### 2. Get Highest Discount
 **GET `/highest-discount`**
-- Returns the best actual highest discount available with amount,bank name and user payment instrument.
+- Returns the best actual highest discount available with amountToPay,bankName and paymentInstrument.
 - **Query Parameters:**
-  - `amount` (required)
-  - `bankName` (optional)
-  - `paymentInstrument` (optional)
+  - `amountToPay` (required){Total amount to pay without applying any offers}
+  - `bankName` (optional){Bank name}
+  - `paymentInstrument` (optional){Payment instrument}
+  
+  - paymentInstrument can be CREDIT,EMI_OPTIONS, DEBIT, UPI, or NO_COST_EMI.
+  - bankName can be any bank name.
 
 - **Response:**
   ```json
@@ -86,6 +98,7 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
   ```
 
 ## Assumptions Made
+
 - Payment instrument mapping prefers structured fields from the Flipkart API (such as instrumentType and provider metadata) and uses offer description parsing only as a fallback when structured data is missing or unclear. No Cost EMI offers are treated as a separate instrument to be able to filter easily.
 - Actual discount is calculated from offer terms, not just the maximum possible value (e.g., considers min order, percent, max discount).
 - No Cost EMI offers do not provide a cash discount unless explicitly stated so discount is calculated as the value of the offer in json file for simplicity, can edit API to return offers with no cost emi as it is a payment instrument.
@@ -94,9 +107,12 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
 - You must connect your own MongoDB instance using the URI in the `.env` file for the API to function.
 
 ## Design Choices
+
 - **Framework:** Chose Node.js with Express.js for its simplicity, scalability, and wide adoption for REST APIs. TypeScript was used for type safety and maintainability.
 - **Database:** I am more confident with MongoDB and I find it easy to use. MongoDB was selected for its flexibility with semi-structured data and ease of integration with Mongoose. The schema uses a unique index on (offerId, bank, instrument) to prevent duplicate offers and ensure efficient lookups.
 - **Parsing Logic:** Payment instrument mapping and discount calculation primarily leverage structured fields from the Flipkart API (such as instrumentType and provider metadata) for accuracy and efficiency. Text parsing of offer descriptions is used only as a fallback when structured data is unavailable, ensuring robust and optimal processing tailored to Flipkart's data format.
+
+*Note: parsing logic is written according to the format of flipkart's offer response and it is not a generic solution. If flipkart changes their response format, the parsing logic will need to be updated.*
 
 ## Scaling GET /highest-discount Endpoint
 To handle 1,000 requests per second:
@@ -112,7 +128,7 @@ To handle 1,000 requests per second:
 - **Async Processing:** I would use asynchronous logic and non-blocking I/O throughout the stack.
 
 ## Improvements with More Time
-- Add automated tests for all endpoints and business logic.
+
 - Implement robust error handling and input validation.
 - Add authentication and authorization for sensitive endpoints.
 - Improve offer parsing to handle more edge cases and formats.
