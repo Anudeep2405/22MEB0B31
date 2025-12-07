@@ -68,9 +68,9 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
 
 ### 2. Get Highest Discount
 **GET `/highest-discount`**
-- Returns the best actual highest discount available for a product and user payment instrument.
+- Returns the best actual highest discount available with amount,bank name and user payment instrument.
 - **Query Parameters:**
-  - `productId` (required)
+  - `amount` (required)
   - `bankName` (optional)
   - `paymentInstrument` (optional)
 
