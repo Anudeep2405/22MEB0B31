@@ -1,20 +1,24 @@
 {
     "viewTracking": {
-        "disabledPaymentOptions": [],
+        "disabledPaymentOptions": [
+            {
+                "paymentOption": "COD"
+            }
+        ],
         "isM3Flow": true,
         "isPartPayment": true,
         "offersAvailable": {
-            "offerCount": 20,
+            "offerCount": 10,
             "offerSummary": [
-                {
-                    "id": "FPO2512041835171GNZ7",
-                    "type": "CASHBACK_ON_CARD",
-                    "value": 1000
-                },
                 {
                     "id": "FPO251128153220CWNA9",
                     "type": "CASHBACK_ON_CARD",
                     "value": 1500
+                },
+                {
+                    "id": "FPO2512041835171GNZ7",
+                    "type": "CASHBACK_ON_CARD",
+                    "value": 1000
                 },
                 {
                     "id": "FPO251128181820XE8LC",
@@ -22,49 +26,9 @@
                     "value": 5000
                 },
                 {
-                    "id": "FPO251130124202II6KV",
+                    "id": "FPO251003233042PW3P9",
                     "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
-                },
-                {
-                    "id": "FPO251202174146U79J5",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
-                },
-                {
-                    "id": "FPO251202174113IAYWD",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
-                },
-                {
-                    "id": "FPO251130121858QL5AO",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 100000000
-                },
-                {
-                    "id": "FPO2512051140204WYE2",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 100000000
-                },
-                {
-                    "id": "FPO251205113644BZ9OX",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
-                },
-                {
-                    "id": "FPO251130130506C88K8",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 0
-                },
-                {
-                    "id": "FPO251205113253RZRTA",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 0
-                },
-                {
-                    "id": "FPO251205112942EM87L",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
+                    "value": 10000
                 },
                 {
                     "id": "FPO251003233853PCRX9",
@@ -77,21 +41,6 @@
                     "value": 40000
                 },
                 {
-                    "id": "FPO2510032323329BAXV",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 5000
-                },
-                {
-                    "id": "FPO251202142455KPD9T",
-                    "type": "CASHBACK_ON_CARD",
-                    "value": 75000
-                },
-                {
-                    "id": "FPO251003233042PW3P9",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 10000
-                },
-                {
                     "id": "FPO2509161258586WXGR",
                     "type": "CASHBACK_ON_CARD",
                     "value": 400000
@@ -102,13 +51,18 @@
                     "value": 400000
                 },
                 {
-                    "id": "FPO251205115226U1ZAH",
+                    "id": "FPO2510032323329BAXV",
                     "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
+                    "value": 5000
+                },
+                {
+                    "id": "FPO251202142455KPD9T",
+                    "type": "CASHBACK_ON_CARD",
+                    "value": 75000
                 }
             ]
         },
-        "isCODApplicable": true,
+        "isCODApplicable": false,
         "isRiskBasedFPLAvailable": false,
         "isCODAdvance": false,
         "isSplitPayment": false,
@@ -128,12 +82,9 @@
                 },
                 {
                     "paymentOption": "NET_OPTIONS"
-                },
-                {
-                    "paymentOption": "COD"
                 }
             ],
-            "count": 5
+            "count": 4
         },
         "EGVWalletUsed": false,
         "checkouttype": "normalcheckout"
@@ -192,7 +143,7 @@
                     {
                         "priceType": "PRICE",
                         "currency": "INR",
-                        "value": "4115500",
+                        "value": "9436500",
                         "dlsToken": "primary-500 font-l-semibold"
                     }
                 ],
@@ -205,7 +156,7 @@
                         {
                             "priceType": "PRICE",
                             "currency": "INR",
-                            "value": "4115500",
+                            "value": "9436500",
                             "dlsToken": "primary-500 font-l-semibold"
                         }
                     ],
@@ -219,7 +170,7 @@
                         {
                             "priceType": "PRICE",
                             "currency": "INR",
-                            "value": "4099900"
+                            "value": "9435800"
                         }
                     ],
                     "breakupType": "BASE_PRICE_SINGLE_ITEM",
@@ -235,18 +186,6 @@
                         }
                     ],
                     "breakupType": "PLATFORM_FEE",
-                    "priceAttributeList": []
-                },
-                {
-                    "label": "Protect Promise Fee",
-                    "prices": [
-                        {
-                            "priceType": "PRICE",
-                            "currency": "INR",
-                            "value": "14900"
-                        }
-                    ],
-                    "breakupType": "PROTECT_PROMISE_FEE",
                     "priceAttributeList": []
                 }
             ],
@@ -279,27 +218,14 @@
                     "iconsInfo": {
                         "remainingOffersCount": 3,
                         "icons": [
-                            "https://static-assets-web.flixcart.com/apex-static/images/payments/upi/paytm-logo.svg",
-                            "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/generic_bank.svg"
+                            "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/generic_bank.svg",
+                            "https://static-assets-web.flixcart.com/apex-static/images/payments/upi/paytm-logo.svg"
                         ]
                     }
                 },
                 "offers": {
                     "headerTitle": "Offers on online payment",
                     "offerList": [
-                        {
-                            "provider": [],
-                            "logo": "https://static-assets-web.flixcart.com/apex-static/images/payments/upi/paytm-logo.svg",
-                            "offerText": {
-                                "text": "Get ₹10 cashback"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO2512041835171GNZ7",
-                                "text": "Flat ₹10 Cashback on Paytm UPI payments. Min Order Value ₹99. Valid once per Paytm account"
-                            }
-                        },
                         {
                             "provider": [],
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/generic_bank.svg",
@@ -311,6 +237,19 @@
                                 "tncText": "Terms and conditions",
                                 "id": "FPO251128153220CWNA9",
                                 "text": "Flat ₹15 Cashback on MobiKwik UPI Transaction. Min Order Value ₹499. Offer Valid Once Per User"
+                            }
+                        },
+                        {
+                            "provider": [],
+                            "logo": "https://static-assets-web.flixcart.com/apex-static/images/payments/upi/paytm-logo.svg",
+                            "offerText": {
+                                "text": "Get ₹10 cashback"
+                            },
+                            "offerDescription": {
+                                "type": "tenure.detail.offer.terms.conditions",
+                                "tncText": "Terms and conditions",
+                                "id": "FPO2512041835171GNZ7",
+                                "text": "Flat ₹10 Cashback on Paytm UPI payments. Min Order Value ₹99. Valid once per Paytm account"
                             }
                         },
                         {
@@ -328,196 +267,17 @@
                         },
                         {
                             "provider": [
-                                "AXIS",
-                                "HDFC",
-                                "ICICI",
-                                "INDUSIND",
-                                "KOTAK",
-                                "SBI",
-                                "PNB",
-                                "FEDERALBANK",
-                                "DBS",
-                                "STANC",
-                                "YESBANK",
-                                "HSBC",
-                                "RBL",
-                                "AMEX",
-                                "FLIPKARTAXISBANK",
-                                "BOBARODA",
-                                "TVS"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251130124202II6KV",
-                                "text": "No Cost EMI* on Selected Bank Cardless EMI"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "AXIS",
-                                "HDFC",
-                                "ICICI",
-                                "INDUSIND",
-                                "KOTAK",
-                                "SBI",
-                                "PNB",
-                                "FEDERALBANK",
-                                "DBS",
-                                "STANC",
-                                "YESBANK",
-                                "HSBC",
-                                "RBL",
-                                "AMEX",
-                                "FLIPKARTAXISBANK",
-                                "BOBARODA"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251202174146U79J5",
-                                "text": "No Cost EMI on Debit Card Transactions"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "AXIS",
-                                "HDFC",
-                                "ICICI",
-                                "INDUSIND",
-                                "KOTAK",
-                                "SBI",
-                                "PNB",
-                                "FEDERALBANK",
-                                "DBS",
-                                "STANC",
-                                "YESBANK",
-                                "HSBC",
-                                "RBL",
-                                "AMEX",
-                                "FLIPKARTAXISBANK",
-                                "BOBARODA"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251202174113IAYWD",
-                                "text": "No Cost EMI on Credit Card Transactions"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "TVS",
-                                "DMI",
-                                "FIBE",
-                                "CHOLA",
-                                "FFPL"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251130121858QL5AO",
-                                "text": "No Cost EMI on Flipkart EMI"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "TVS",
-                                "DMI",
-                                "FIBE",
-                                "CHOLA",
-                                "FFPL"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO2512051140204WYE2",
-                                "text": "No Cost EMI on Flipkart EMI"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "HDFC",
-                                "ICICI",
-                                "TVS"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251205113644BZ9OX",
-                                "text": "No Cost EMI* on Selected Bank Cardless EMI"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "BAJAJFINSERV",
                                 "FLIPKARTBAJAJFINSERV"
                             ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
+                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
                             "offerText": {
-                                "text": "Save ₹0"
+                                "text": "Save ₹100"
                             },
                             "offerDescription": {
                                 "type": "tenure.detail.offer.terms.conditions",
                                 "tncText": "Terms and conditions",
-                                "id": "FPO251130130506C88K8",
-                                "text": "No Cost EMI on Flipkart Bajaj Finserv and Bajaj Finserv"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "BAJAJFINSERV",
-                                "FLIPKARTBAJAJFINSERV"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "Save ₹0"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251205113253RZRTA",
-                                "text": "No Cost EMI on Flipkart Bajaj Finserv and Bajaj Finserv"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "HDFC",
-                                "ICICI"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251205112942EM87L",
-                                "text": "No Cost EMI on Debit card transaction"
+                                "id": "FPO251003233042PW3P9",
+                                "text": "Flat ₹100 off on Flipkart Bajaj Finserv Insta EMI Card. Min Booking Amount: ₹7,500"
                             }
                         },
                         {
@@ -552,51 +312,6 @@
                         },
                         {
                             "provider": [
-                                "FLIPKARTBAJAJFINSERV"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
-                            "offerText": {
-                                "text": "Save ₹50"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO2510032323329BAXV",
-                                "text": "Flat ₹50 off on Flipkart Bajaj Finserv Insta EMI Card. Min Booking Amount: ₹2,500"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "FLIPKARTAXISBANK"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
-                            "offerText": {
-                                "text": "Get 5% cashback"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251202142455KPD9T",
-                                "text": "5% cashback on Axis Bank Flipkart Debit Card up to ₹750"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "FLIPKARTBAJAJFINSERV"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
-                            "offerText": {
-                                "text": "Save ₹100"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251003233042PW3P9",
-                                "text": "Flat ₹100 off on Flipkart Bajaj Finserv Insta EMI Card. Min Booking Amount: ₹7,500"
-                            }
-                        },
-                        {
-                            "provider": [
                                 "FLIPKARTAXISBANK"
                             ],
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
@@ -627,17 +342,32 @@
                         },
                         {
                             "provider": [
-                                "IDFC"
+                                "FLIPKARTBAJAJFINSERV"
                             ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/IDFC.svg",
+                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
                             "offerText": {
-                                "text": "No cost EMI offer"
+                                "text": "Save ₹50"
                             },
                             "offerDescription": {
                                 "type": "tenure.detail.offer.terms.conditions",
                                 "tncText": "Terms and conditions",
-                                "id": "FPO251205115226U1ZAH",
-                                "text": "No Cost EMI* on IDFC Bank Cardless EMI"
+                                "id": "FPO2510032323329BAXV",
+                                "text": "Flat ₹50 off on Flipkart Bajaj Finserv Insta EMI Card. Min Booking Amount: ₹2,500"
+                            }
+                        },
+                        {
+                            "provider": [
+                                "FLIPKARTAXISBANK"
+                            ],
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
+                            "offerText": {
+                                "text": "Get 5% cashback"
+                            },
+                            "offerDescription": {
+                                "type": "tenure.detail.offer.terms.conditions",
+                                "tncText": "Terms and conditions",
+                                "id": "FPO251202142455KPD9T",
+                                "text": "5% cashback on Axis Bank Flipkart Debit Card up to ₹750"
                             }
                         }
                     ],
@@ -648,88 +378,10 @@
                             "value": "ALL"
                         },
                         {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
-                            "title": "Axis Bank",
+                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
+                            "title": "Flipkart Bajaj Finserv",
                             "type": "provider",
-                            "value": "AXIS"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/HDFC.svg",
-                            "title": "HDFC Bank",
-                            "type": "provider",
-                            "value": "HDFC"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/ICICI.svg",
-                            "title": "ICICI Bank",
-                            "type": "provider",
-                            "value": "ICICI"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/INDUSIND.svg",
-                            "title": "IndusInd Bank",
-                            "type": "provider",
-                            "value": "INDUSIND"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/KOTAK.svg",
-                            "title": "Kotak Bank",
-                            "type": "provider",
-                            "value": "KOTAK"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
-                            "title": "State Bank of India",
-                            "type": "provider",
-                            "value": "SBI"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/PNB.svg",
-                            "title": "Punjab National Bank",
-                            "type": "provider",
-                            "value": "PNB"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/FEDERAL.svg",
-                            "title": "Federal Bank",
-                            "type": "provider",
-                            "value": "FEDERALBANK"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/DBSBANK_V2.svg",
-                            "title": "DBS Bank",
-                            "type": "provider",
-                            "value": "DBS"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/STDC.svg",
-                            "title": "Standard Chartered Bank",
-                            "type": "provider",
-                            "value": "STANC"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/YESBANK_V1.svg",
-                            "title": "Yes Bank",
-                            "type": "provider",
-                            "value": "YESBANK"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/HSBC.svg",
-                            "title": "HSBC",
-                            "type": "provider",
-                            "value": "HSBC"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/RBL.svg",
-                            "title": "RBL Bank Credit Card",
-                            "type": "provider",
-                            "value": "RBL"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AMEX.svg",
-                            "title": "American Express",
-                            "type": "provider",
-                            "value": "AMEX"
+                            "value": "FLIPKARTBAJAJFINSERV"
                         },
                         {
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
@@ -738,59 +390,10 @@
                             "value": "FLIPKARTAXISBANK"
                         },
                         {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/BOB.svg",
-                            "title": "Bank of Baroda",
-                            "type": "provider",
-                            "value": "BOBARODA"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/TVS.svg",
-                            "type": "provider",
-                            "value": "TVS"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/DMI.svg",
-                            "type": "provider",
-                            "value": "DMI"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/FIBE.svg",
-                            "type": "provider",
-                            "value": "FIBE"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/CHOLA.svg",
-                            "type": "provider",
-                            "value": "CHOLA"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/generic_bank.svg",
-                            "type": "provider",
-                            "value": "FFPL"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
-                            "title": "Bajaj Finserv",
-                            "type": "provider",
-                            "value": "BAJAJFINSERV"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
-                            "title": "Flipkart Bajaj Finserv",
-                            "type": "provider",
-                            "value": "FLIPKARTBAJAJFINSERV"
-                        },
-                        {
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
                             "title": " Flipkart SBI Credit Card",
                             "type": "provider",
                             "value": "FLIPKARTSBI"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/IDFC.svg",
-                            "title": "IDFC FIRST Bank",
-                            "type": "provider",
-                            "value": "IDFC"
                         }
                     ]
                 }
@@ -800,7 +403,7 @@
             "type": "PAYMENT_OPTION",
             "expanded": true,
             "clickTracking": {
-                "amountPayable": 4115500,
+                "amountPayable": 9436500,
                 "section": "generic",
                 "checkouttype": "normalcheckout"
             },
@@ -836,7 +439,7 @@
                         "payButtonDetails": {
                             "irisKey": "payAmount",
                             "disablePayButton": true,
-                            "amount": 4115500
+                            "amount": 9436500
                         },
                         "provider": "PAYTM",
                         "paymentInstrument": "UPI_COLLECT",
@@ -900,7 +503,7 @@
             "type": "PAYMENT_OPTION",
             "expanded": false,
             "clickTracking": {
-                "amountPayable": 4115500,
+                "amountPayable": 9436500,
                 "section": "generic",
                 "checkouttype": "normalcheckout"
             },
@@ -935,18 +538,18 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 9436500
                             },
                             "type": "NEW_CARD",
                             "networkLogo": {
-                                "RUPAY": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/RUPAY.svg",
-                                "AMEX": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/AMEX.svg",
-                                "MAESTRO": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/MAESTRO.svg",
                                 "DINERS": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/DINERS.svg",
-                                "DISCOVER": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/DISCOVER.svg",
-                                "VISA": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/VISA-080823.svg",
+                                "JCB": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/JCB.svg",
                                 "MASTERCARD": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/MASTERCARD.svg",
-                                "JCB": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/JCB.svg"
+                                "DISCOVER": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/DISCOVER.svg",
+                                "RUPAY": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/RUPAY.svg",
+                                "MAESTRO": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/MAESTRO.svg",
+                                "VISA": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/VISA-080823.svg",
+                                "AMEX": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/AMEX.svg"
                             },
                             "headerInformation": {
                                 "formatText": "**Note:** Please ensure your card can be used for online transactions. [Learn More](loadMoreLink)",
@@ -1029,19 +632,19 @@
                             "inlineOfferMessage": [
                                 [
                                     {
-                                        "text": "No Cost EMI ",
-                                        "dlsToken": "success-500",
+                                        "text": "EMI  ",
+                                        "dlsToken": "",
                                         "type": "TEXT"
                                     },
                                     {
-                                        "text": "₹4,552/m",
+                                        "text": "₹4,598/m",
                                         "type": "TEXT"
                                     }
                                 ]
                             ],
                             "messages": [],
                             "clickTracking": {
-                                "amountPayable": 4115500
+                                "amountPayable": 9436500
                             }
                         },
                         {
@@ -1056,46 +659,46 @@
                             "inlineOfferMessage": [
                                 [
                                     {
-                                        "text": "No Cost EMI ",
-                                        "dlsToken": "success-500",
+                                        "text": "EMI  ",
+                                        "dlsToken": "",
                                         "type": "TEXT"
                                     },
                                     {
-                                        "text": "₹4,552/m",
+                                        "text": "₹4,621/m",
                                         "type": "TEXT"
                                     }
                                 ]
                             ],
                             "messages": [],
                             "clickTracking": {
-                                "amountPayable": 4115500
+                                "amountPayable": 9436500
                             }
                         },
                         {
-                            "title": "Bajaj Finserv",
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
+                            "title": "Flipkart SBI Credit Card",
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
                             "applicable": true,
                             "selected": false,
                             "instrumentCheckRequired": false,
                             "emiType": "credit-card",
-                            "bankCode": "BAJAJFINSERV",
+                            "bankCode": "FLIPKARTSBI",
                             "buttonText": "See Plans",
                             "inlineOfferMessage": [
                                 [
                                     {
-                                        "text": "No Cost EMI ",
-                                        "dlsToken": "success-500",
+                                        "text": "EMI  ",
+                                        "dlsToken": "",
                                         "type": "TEXT"
                                     },
                                     {
-                                        "text": "₹3,421/m",
+                                        "text": "₹4,598/m",
                                         "type": "TEXT"
                                     }
                                 ]
                             ],
                             "messages": [],
                             "clickTracking": {
-                                "amountPayable": 4115500
+                                "amountPayable": 9436500
                             }
                         }
                     ],
@@ -1129,7 +732,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 9436500
                             },
                             "bankCode": "SBI",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1144,7 +747,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 9436500
                             },
                             "bankCode": "HDFC",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1159,7 +762,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 9436500
                             },
                             "bankCode": "ICICI",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1174,7 +777,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 9436500
                             },
                             "bankCode": "KOTAK",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1189,7 +792,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 9436500
                             },
                             "bankCode": "AXIS",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1204,7 +807,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 9436500
                             },
                             "bankCode": "FEDERALBANK",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1219,7 +822,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 9436500
                             },
                             "bankCode": "IOB",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1234,7 +837,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 9436500
                             },
                             "bankCode": "INDIANBANK",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1246,133 +849,10 @@
             }
         },
         {
-            "type": "PAYMENT_OPTION",
-            "expanded": false,
-            "clickTracking": {
-                "isOfferApplied": false,
-                "amountPayable": 4115500,
-                "discount": 0,
-                "section": "generic",
-                "checkouttype": "normalcheckout"
-            },
-            "data": {
-                "instrumentType": "COD",
-                "applicable": true,
-                "header": {
-                    "title": "Cash on Delivery",
-                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/cash-icon.svg"
-                },
-                "content": {
-                    "options": [
-                        {
-                            "applicable": true,
-                            "selected": true,
-                            "instrumentCheckRequired": false,
-                            "payButtonDetails": {
-                                "irisKey": "placeOrder",
-                                "disablePayButton": false,
-                                "buttonAction": {
-                                    "displayType": "BOTTOM_SHEET",
-                                    "content": {
-                                        "type": "COD_CONFIRMATION_BOTTOMSHEET",
-                                        "header": {
-                                            "title": "Confirm Cash on Delivery Order"
-                                        },
-                                        "information": {
-                                            "image": "/FK_STATIC_ASSET/apex-static/images/payments/cod/confirmation-banners/en.svg",
-                                            "primaryBtn": "Confirm order",
-                                            "secBtn": "Cancel"
-                                        }
-                                    }
-                                }
-                            },
-                            "instrumentDetails": {
-                                "disablePayButton": false,
-                                "disablePayTimeout": 0,
-                                "paymentInstrument": "COD",
-                                "pageDiff": {
-                                    "priceSummary": {
-                                        "breakupOrderingList": [
-                                            "REMAINING_AMOUNT_SINGLE_ITEM",
-                                            "REMAINING_AMOUNT_MULTIPLE_ITEM",
-                                            "BASE_PRICE_SINGLE_ITEM",
-                                            "BASE_PRICE_MULTIPLE_ITEMS",
-                                            "TOTAL_LOAN_AMOUNT",
-                                            "ADVANCE_BASE_PRICE",
-                                            "DELIVERY_CHARGE",
-                                            "PICKUP_CHARGE",
-                                            "PACKAGING_CHARGE",
-                                            "SALE_FEE",
-                                            "PLATFORM_FEE",
-                                            "CONVENIENCE_FEE",
-                                            "PROTECT_PROMISE_FEE",
-                                            "RAIN_FEE",
-                                            "SELLER_HANDLING_FEE",
-                                            "HANDLING_FEE",
-                                            "EGV",
-                                            "EGV_WALLET",
-                                            "INTEREST_BY_BANK",
-                                            "NC_EMI_DISCOUNT",
-                                            "FK_PAYLATER_CREDIT",
-                                            "FK_PAYLATER_EMI_CREDIT",
-                                            "FK_PAYLATER_DISCOUNT",
-                                            "PAY_AT_DELIVERY",
-                                            "AMOUNT_PAYABLE",
-                                            "APPROVED_EMI_AMOUNT"
-                                        ],
-                                        "finalPriceBreakupOrderingList": [
-                                            "AMOUNT_PAYABLE"
-                                        ],
-                                        "finalPrice": {
-                                            "label": "Total Amount",
-                                            "prices": [
-                                                {
-                                                    "priceType": "PRICE",
-                                                    "currency": "INR",
-                                                    "value": "4115500",
-                                                    "dlsToken": "primary-500 font-l-semibold"
-                                                }
-                                            ],
-                                            "dlsToken": "primary-500",
-                                            "breakupType": "AMOUNT_PAYABLE"
-                                        },
-                                        "finalPriceBreakup": [
-                                            {
-                                                "label": "Total Amount",
-                                                "prices": [
-                                                    {
-                                                        "priceType": "PRICE",
-                                                        "currency": "INR",
-                                                        "value": "4115500",
-                                                        "dlsToken": "primary-500 font-l-semibold"
-                                                    }
-                                                ],
-                                                "dlsToken": "primary-500",
-                                                "breakupType": "AMOUNT_PAYABLE"
-                                            }
-                                        ],
-                                        "breakup": []
-                                    }
-                                },
-                                "infoMessages": []
-                            },
-                            "message": "41,300 people used online payment options in the last hour. Pay online now for safe and contactless delivery.",
-                            "nudgeInfo": {
-                                "logo": "",
-                                "title": "₹50 discount on online payments",
-                                "description": "use UPI to avail"
-                            },
-                            "advancePaymentApplicable": false
-                        }
-                    ]
-                }
-            }
-        },
-        {
             "type": "EGV",
             "expanded": false,
             "clickTracking": {
-                "amountPayable": 4115500,
+                "amountPayable": 9436500,
                 "section": "generic",
                 "checkouttype": "normalcheckout"
             },
@@ -1384,6 +864,37 @@
                     "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/gift-card-logo-09082023.svg",
                     "disableAddBtn": false,
                     "addBtnText": "Add"
+                }
+            }
+        },
+        {
+            "type": "PAYMENT_OPTION",
+            "expanded": false,
+            "clickTracking": {
+                "isOfferApplied": false,
+                "amountPayable": 9436500,
+                "discount": 0,
+                "section": "generic",
+                "checkouttype": "normalcheckout"
+            },
+            "data": {
+                "instrumentType": "COD",
+                "applicable": false,
+                "header": {
+                    "title": "Cash on Delivery",
+                    "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/cash-icon.svg",
+                    "callout": {
+                        "title": "Unavailable",
+                        "image": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/help-icon-grey.svg",
+                        "displayType": "BOTTOM_SHEET",
+                        "content": {
+                            "type": "DISABLE_INFO",
+                            "information": {
+                                "title": "Cash on Delivery Unavailable",
+                                "description": "Cash on Delivery(CoD) is not available for this order. It may not be supported for the product or selected area, or because of recent account activity."
+                            }
+                        }
+                    }
                 }
             }
         },

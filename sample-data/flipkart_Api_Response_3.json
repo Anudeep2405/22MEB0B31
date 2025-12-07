@@ -4,7 +4,7 @@
         "isM3Flow": true,
         "isPartPayment": true,
         "offersAvailable": {
-            "offerCount": 20,
+            "offerCount": 18,
             "offerSummary": [
                 {
                     "id": "FPO2512041835171GNZ7",
@@ -22,49 +22,19 @@
                     "value": 5000
                 },
                 {
-                    "id": "FPO251130124202II6KV",
+                    "id": "FPO251202180751JY1ZV",
                     "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
+                    "value": 50000
                 },
                 {
-                    "id": "FPO251202174146U79J5",
+                    "id": "FPO251202175034FIUEG",
                     "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
+                    "value": 100000
                 },
                 {
-                    "id": "FPO251202174113IAYWD",
+                    "id": "FPO251202180150LAFBG",
                     "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
-                },
-                {
-                    "id": "FPO251130121858QL5AO",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 100000000
-                },
-                {
-                    "id": "FPO2512051140204WYE2",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 100000000
-                },
-                {
-                    "id": "FPO251205113644BZ9OX",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
-                },
-                {
-                    "id": "FPO251130130506C88K8",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 0
-                },
-                {
-                    "id": "FPO251205113253RZRTA",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 0
-                },
-                {
-                    "id": "FPO251205112942EM87L",
-                    "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
+                    "value": 50000
                 },
                 {
                     "id": "FPO251003233853PCRX9",
@@ -72,9 +42,14 @@
                     "value": 20000
                 },
                 {
-                    "id": "FPO25100323462987DV2",
+                    "id": "FPO2511211836048EAOQ",
                     "type": "INSTANT_DISCOUNT",
-                    "value": 40000
+                    "value": 150000
+                },
+                {
+                    "id": "FPO251129151948NDIDF",
+                    "type": "INSTANT_DISCOUNT",
+                    "value": 30000
                 },
                 {
                     "id": "FPO2510032323329BAXV",
@@ -82,9 +57,19 @@
                     "value": 5000
                 },
                 {
+                    "id": "FPO2511291527071FZ4Q",
+                    "type": "INSTANT_DISCOUNT",
+                    "value": 125000
+                },
+                {
                     "id": "FPO251202142455KPD9T",
                     "type": "CASHBACK_ON_CARD",
                     "value": 75000
+                },
+                {
+                    "id": "FPO251203185744V522D",
+                    "type": "INSTANT_DISCOUNT",
+                    "value": 100000
                 },
                 {
                     "id": "FPO251003233042PW3P9",
@@ -102,9 +87,14 @@
                     "value": 400000
                 },
                 {
-                    "id": "FPO251205115226U1ZAH",
+                    "id": "FPO2512021824073COXW",
                     "type": "INSTANT_DISCOUNT",
-                    "value": 1000000
+                    "value": 100000
+                },
+                {
+                    "id": "FPO2511211810364M7CY",
+                    "type": "INSTANT_DISCOUNT",
+                    "value": 50000
                 }
             ]
         },
@@ -192,7 +182,7 @@
                     {
                         "priceType": "PRICE",
                         "currency": "INR",
-                        "value": "4115500",
+                        "value": "2912600",
                         "dlsToken": "primary-500 font-l-semibold"
                     }
                 ],
@@ -205,7 +195,7 @@
                         {
                             "priceType": "PRICE",
                             "currency": "INR",
-                            "value": "4115500",
+                            "value": "2912600",
                             "dlsToken": "primary-500 font-l-semibold"
                         }
                     ],
@@ -219,7 +209,7 @@
                         {
                             "priceType": "PRICE",
                             "currency": "INR",
-                            "value": "4099900"
+                            "value": "2899000"
                         }
                     ],
                     "breakupType": "BASE_PRICE_SINGLE_ITEM",
@@ -243,7 +233,7 @@
                         {
                             "priceType": "PRICE",
                             "currency": "INR",
-                            "value": "14900"
+                            "value": "12900"
                         }
                     ],
                     "breakupType": "PROTECT_PROMISE_FEE",
@@ -274,7 +264,7 @@
             "type": "OFFER_LIST",
             "data": {
                 "offerSummary": {
-                    "title": "₹400 Off",
+                    "title": "10% instant discount",
                     "subTitle": "Claim now with payment offers",
                     "iconsInfo": {
                         "remainingOffersCount": 3,
@@ -328,196 +318,50 @@
                         },
                         {
                             "provider": [
-                                "AXIS",
-                                "HDFC",
-                                "ICICI",
-                                "INDUSIND",
-                                "KOTAK",
                                 "SBI",
-                                "PNB",
-                                "FEDERALBANK",
-                                "DBS",
-                                "STANC",
-                                "YESBANK",
-                                "HSBC",
-                                "RBL",
-                                "AMEX",
-                                "FLIPKARTAXISBANK",
-                                "BOBARODA",
-                                "TVS"
+                                "FLIPKARTSBI"
                             ],
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
                             "offerText": {
-                                "text": "No cost EMI offer"
+                                "text": "Save ₹500"
                             },
                             "offerDescription": {
                                 "type": "tenure.detail.offer.terms.conditions",
                                 "tncText": "Terms and conditions",
-                                "id": "FPO251130124202II6KV",
-                                "text": "No Cost EMI* on Selected Bank Cardless EMI"
+                                "id": "FPO251202180751JY1ZV",
+                                "text": "Extra ₹500 off on SBI Credit Card EMI Transaction on orders of ₹24,990 and above"
                             }
                         },
                         {
                             "provider": [
-                                "AXIS",
-                                "HDFC",
-                                "ICICI",
-                                "INDUSIND",
-                                "KOTAK",
                                 "SBI",
-                                "PNB",
-                                "FEDERALBANK",
-                                "DBS",
-                                "STANC",
-                                "YESBANK",
-                                "HSBC",
-                                "RBL",
-                                "AMEX",
-                                "FLIPKARTAXISBANK",
-                                "BOBARODA"
+                                "FLIPKARTSBI"
                             ],
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
                             "offerText": {
-                                "text": "No cost EMI offer"
+                                "text": "Save ₹1,000"
                             },
                             "offerDescription": {
                                 "type": "tenure.detail.offer.terms.conditions",
                                 "tncText": "Terms and conditions",
-                                "id": "FPO251202174146U79J5",
-                                "text": "No Cost EMI on Debit Card Transactions"
+                                "id": "FPO251202175034FIUEG",
+                                "text": "10% off up to ₹1000 on SBI Credit Card EMI Transactions of ₹4,990 and above"
                             }
                         },
                         {
                             "provider": [
-                                "AXIS",
-                                "HDFC",
-                                "ICICI",
-                                "INDUSIND",
-                                "KOTAK",
                                 "SBI",
-                                "PNB",
-                                "FEDERALBANK",
-                                "DBS",
-                                "STANC",
-                                "YESBANK",
-                                "HSBC",
-                                "RBL",
-                                "AMEX",
-                                "FLIPKARTAXISBANK",
-                                "BOBARODA"
+                                "FLIPKARTSBI"
                             ],
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
                             "offerText": {
-                                "text": "No cost EMI offer"
+                                "text": "Save ₹500"
                             },
                             "offerDescription": {
                                 "type": "tenure.detail.offer.terms.conditions",
                                 "tncText": "Terms and conditions",
-                                "id": "FPO251202174113IAYWD",
-                                "text": "No Cost EMI on Credit Card Transactions"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "TVS",
-                                "DMI",
-                                "FIBE",
-                                "CHOLA",
-                                "FFPL"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251130121858QL5AO",
-                                "text": "No Cost EMI on Flipkart EMI"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "TVS",
-                                "DMI",
-                                "FIBE",
-                                "CHOLA",
-                                "FFPL"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO2512051140204WYE2",
-                                "text": "No Cost EMI on Flipkart EMI"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "HDFC",
-                                "ICICI",
-                                "TVS"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251205113644BZ9OX",
-                                "text": "No Cost EMI* on Selected Bank Cardless EMI"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "BAJAJFINSERV",
-                                "FLIPKARTBAJAJFINSERV"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "Save ₹0"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251130130506C88K8",
-                                "text": "No Cost EMI on Flipkart Bajaj Finserv and Bajaj Finserv"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "BAJAJFINSERV",
-                                "FLIPKARTBAJAJFINSERV"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "Save ₹0"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251205113253RZRTA",
-                                "text": "No Cost EMI on Flipkart Bajaj Finserv and Bajaj Finserv"
-                            }
-                        },
-                        {
-                            "provider": [
-                                "HDFC",
-                                "ICICI"
-                            ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg",
-                            "offerText": {
-                                "text": "No cost EMI offer"
-                            },
-                            "offerDescription": {
-                                "type": "tenure.detail.offer.terms.conditions",
-                                "tncText": "Terms and conditions",
-                                "id": "FPO251205112942EM87L",
-                                "text": "No Cost EMI on Debit card transaction"
+                                "id": "FPO251202180150LAFBG",
+                                "text": "Extra ₹500 off on SBI Credit Card Transaction on orders of ₹24,990 and above"
                             }
                         },
                         {
@@ -537,17 +381,32 @@
                         },
                         {
                             "provider": [
-                                "FLIPKARTBAJAJFINSERV"
+                                "ICICI"
                             ],
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/ICICI.svg",
                             "offerText": {
-                                "text": "Save ₹400"
+                                "text": "Save ₹1,500"
                             },
                             "offerDescription": {
                                 "type": "tenure.detail.offer.terms.conditions",
                                 "tncText": "Terms and conditions",
-                                "id": "FPO25100323462987DV2",
-                                "text": "Flat ₹400 off on Flipkart Bajaj Finserv Insta EMI Card. Min Booking Amount: ₹40,000"
+                                "id": "FPO2511211836048EAOQ",
+                                "text": "10% off on ICICI Credit Card EMI Transactions, up to ₹1500 on orders of ₹9,990 and above"
+                            }
+                        },
+                        {
+                            "provider": [
+                                "HDFC"
+                            ],
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/HDFC.svg",
+                            "offerText": {
+                                "text": "Save ₹300"
+                            },
+                            "offerDescription": {
+                                "type": "tenure.detail.offer.terms.conditions",
+                                "tncText": "Terms and conditions",
+                                "id": "FPO251129151948NDIDF",
+                                "text": "Extra ₹300 off on HDFC Bank Credit Card EMI on orders of ₹24990 and above"
                             }
                         },
                         {
@@ -567,6 +426,21 @@
                         },
                         {
                             "provider": [
+                                "HDFC"
+                            ],
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/HDFC.svg",
+                            "offerText": {
+                                "text": "Save ₹1,250"
+                            },
+                            "offerDescription": {
+                                "type": "tenure.detail.offer.terms.conditions",
+                                "tncText": "Terms and conditions",
+                                "id": "FPO2511291527071FZ4Q",
+                                "text": "10% Off Up to ₹1250 on HDFC Bank Credit Card EMI on 6 months and above tenure . Min.Txn Value: ₹4990"
+                            }
+                        },
+                        {
+                            "provider": [
                                 "FLIPKARTAXISBANK"
                             ],
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
@@ -578,6 +452,21 @@
                                 "tncText": "Terms and conditions",
                                 "id": "FPO251202142455KPD9T",
                                 "text": "5% cashback on Axis Bank Flipkart Debit Card up to ₹750"
+                            }
+                        },
+                        {
+                            "provider": [
+                                "SBI"
+                            ],
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
+                            "offerText": {
+                                "text": "Save ₹1,000"
+                            },
+                            "offerDescription": {
+                                "type": "tenure.detail.offer.terms.conditions",
+                                "tncText": "Terms and conditions",
+                                "id": "FPO251203185744V522D",
+                                "text": "10% off up to ₹1,000 on SBI Credit Card Transactions of ₹4,990 and above"
                             }
                         },
                         {
@@ -627,17 +516,32 @@
                         },
                         {
                             "provider": [
-                                "IDFC"
+                                "FLIPKARTSBI"
                             ],
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/IDFC.svg",
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
                             "offerText": {
-                                "text": "No cost EMI offer"
+                                "text": "Save ₹1,000"
                             },
                             "offerDescription": {
                                 "type": "tenure.detail.offer.terms.conditions",
                                 "tncText": "Terms and conditions",
-                                "id": "FPO251205115226U1ZAH",
-                                "text": "No Cost EMI* on IDFC Bank Cardless EMI"
+                                "id": "FPO2512021824073COXW",
+                                "text": "5% off up to ₹1000 on Flipkart SBI Credit Card Transactions of ₹4,990 and above"
+                            }
+                        },
+                        {
+                            "provider": [
+                                "ICICI"
+                            ],
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/ICICI.svg",
+                            "offerText": {
+                                "text": "Save ₹500"
+                            },
+                            "offerDescription": {
+                                "type": "tenure.detail.offer.terms.conditions",
+                                "tncText": "Terms and conditions",
+                                "id": "FPO2511211810364M7CY",
+                                "text": "Extra ₹500 off on ICICI Credit Card EMI Transactions, Min Product Value ₹24990"
                             }
                         }
                     ],
@@ -648,137 +552,10 @@
                             "value": "ALL"
                         },
                         {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
-                            "title": "Axis Bank",
-                            "type": "provider",
-                            "value": "AXIS"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/HDFC.svg",
-                            "title": "HDFC Bank",
-                            "type": "provider",
-                            "value": "HDFC"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/ICICI.svg",
-                            "title": "ICICI Bank",
-                            "type": "provider",
-                            "value": "ICICI"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/INDUSIND.svg",
-                            "title": "IndusInd Bank",
-                            "type": "provider",
-                            "value": "INDUSIND"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/KOTAK.svg",
-                            "title": "Kotak Bank",
-                            "type": "provider",
-                            "value": "KOTAK"
-                        },
-                        {
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
                             "title": "State Bank of India",
                             "type": "provider",
                             "value": "SBI"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/PNB.svg",
-                            "title": "Punjab National Bank",
-                            "type": "provider",
-                            "value": "PNB"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/FEDERAL.svg",
-                            "title": "Federal Bank",
-                            "type": "provider",
-                            "value": "FEDERALBANK"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/DBSBANK_V2.svg",
-                            "title": "DBS Bank",
-                            "type": "provider",
-                            "value": "DBS"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/STDC.svg",
-                            "title": "Standard Chartered Bank",
-                            "type": "provider",
-                            "value": "STANC"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/YESBANK_V1.svg",
-                            "title": "Yes Bank",
-                            "type": "provider",
-                            "value": "YESBANK"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/HSBC.svg",
-                            "title": "HSBC",
-                            "type": "provider",
-                            "value": "HSBC"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/RBL.svg",
-                            "title": "RBL Bank Credit Card",
-                            "type": "provider",
-                            "value": "RBL"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AMEX.svg",
-                            "title": "American Express",
-                            "type": "provider",
-                            "value": "AMEX"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
-                            "title": "Flipkart Axis Bank",
-                            "type": "provider",
-                            "value": "FLIPKARTAXISBANK"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/BOB.svg",
-                            "title": "Bank of Baroda",
-                            "type": "provider",
-                            "value": "BOBARODA"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/TVS.svg",
-                            "type": "provider",
-                            "value": "TVS"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/DMI.svg",
-                            "type": "provider",
-                            "value": "DMI"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/FIBE.svg",
-                            "type": "provider",
-                            "value": "FIBE"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/CHOLA.svg",
-                            "type": "provider",
-                            "value": "CHOLA"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/generic_bank.svg",
-                            "type": "provider",
-                            "value": "FFPL"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
-                            "title": "Bajaj Finserv",
-                            "type": "provider",
-                            "value": "BAJAJFINSERV"
-                        },
-                        {
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
-                            "title": "Flipkart Bajaj Finserv",
-                            "type": "provider",
-                            "value": "FLIPKARTBAJAJFINSERV"
                         },
                         {
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
@@ -787,10 +564,28 @@
                             "value": "FLIPKARTSBI"
                         },
                         {
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/IDFC.svg",
-                            "title": "IDFC FIRST Bank",
+                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
+                            "title": "Flipkart Bajaj Finserv",
                             "type": "provider",
-                            "value": "IDFC"
+                            "value": "FLIPKARTBAJAJFINSERV"
+                        },
+                        {
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/ICICI.svg",
+                            "title": "ICICI Bank",
+                            "type": "provider",
+                            "value": "ICICI"
+                        },
+                        {
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/HDFC.svg",
+                            "title": "HDFC Bank",
+                            "type": "provider",
+                            "value": "HDFC"
+                        },
+                        {
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
+                            "title": "Flipkart Axis Bank",
+                            "type": "provider",
+                            "value": "FLIPKARTAXISBANK"
                         }
                     ]
                 }
@@ -800,7 +595,7 @@
             "type": "PAYMENT_OPTION",
             "expanded": true,
             "clickTracking": {
-                "amountPayable": 4115500,
+                "amountPayable": 2912600,
                 "section": "generic",
                 "checkouttype": "normalcheckout"
             },
@@ -836,7 +631,7 @@
                         "payButtonDetails": {
                             "irisKey": "payAmount",
                             "disablePayButton": true,
-                            "amount": 4115500
+                            "amount": 2912600
                         },
                         "provider": "PAYTM",
                         "paymentInstrument": "UPI_COLLECT",
@@ -900,7 +695,7 @@
             "type": "PAYMENT_OPTION",
             "expanded": false,
             "clickTracking": {
-                "amountPayable": 4115500,
+                "amountPayable": 2912600,
                 "section": "generic",
                 "checkouttype": "normalcheckout"
             },
@@ -917,11 +712,11 @@
                     ],
                     "subtext": [
                         {
-                            "text": "Get upto 5% cashback",
+                            "text": "Save upto ₹1,500",
                             "dlsToken": "success-500"
                         },
                         {
-                            "text": "2 offers available",
+                            "text": "4 offers available",
                             "dlsToken": "success-500"
                         }
                     ]
@@ -935,17 +730,17 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 2912600
                             },
                             "type": "NEW_CARD",
                             "networkLogo": {
-                                "RUPAY": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/RUPAY.svg",
-                                "AMEX": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/AMEX.svg",
                                 "MAESTRO": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/MAESTRO.svg",
+                                "MASTERCARD": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/MASTERCARD.svg",
                                 "DINERS": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/DINERS.svg",
                                 "DISCOVER": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/DISCOVER.svg",
+                                "AMEX": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/AMEX.svg",
                                 "VISA": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/VISA-080823.svg",
-                                "MASTERCARD": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/MASTERCARD.svg",
+                                "RUPAY": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/RUPAY.svg",
                                 "JCB": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/network-logos/JCB.svg"
                             },
                             "headerInformation": {
@@ -1022,6 +817,95 @@
                             "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
                             "applicable": true,
                             "selected": true,
+                            "aggregatedOffer": {
+                                "selectedText": "2 offer applicable",
+                                "defaultText": "2 offer applicable",
+                                "selectedImage": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/offer-unselected.svg",
+                                "defaultImage": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/offer-unselected.svg",
+                                "dlsToken": "",
+                                "callout": {
+                                    "title": "Details",
+                                    "displayType": "BOTTOM_SHEET",
+                                    "content": {
+                                        "type": "OFFER_LIST",
+                                        "header": {
+                                            "title": "Offer Details"
+                                        },
+                                        "information": {
+                                            "offers": [
+                                                {
+                                                    "offerHeader": {
+                                                        "title": "Extra ₹500 off on SBI Credit Card EMI Transaction on orders of ₹24,990 and above",
+                                                        "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg"
+                                                    },
+                                                    "offerDescription": [
+                                                        {
+                                                            "key": "Min. order value",
+                                                            "value": "₹24,990",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max Order Value",
+                                                            "value": "₹10,00,000",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max. discount",
+                                                            "value": "₹500",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "You get",
+                                                            "value": "₹500",
+                                                            "token": "success-500"
+                                                        }
+                                                    ],
+                                                    "offerFooter": {
+                                                        "tncInfo": {
+                                                            "id": "FPO251202180751JY1ZV",
+                                                            "text": "Read offer T&C"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "offerHeader": {
+                                                        "title": "10% off up to ₹1000 on SBI Credit Card EMI Transactions of ₹4,990 and above",
+                                                        "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg"
+                                                    },
+                                                    "offerDescription": [
+                                                        {
+                                                            "key": "Min. order value",
+                                                            "value": "₹4,990",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max Order Value",
+                                                            "value": "₹10,00,000",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max. discount",
+                                                            "value": "₹1,000",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "You get",
+                                                            "value": "₹1,000",
+                                                            "token": "success-500"
+                                                        }
+                                                    ],
+                                                    "offerFooter": {
+                                                        "tncInfo": {
+                                                            "id": "FPO251202175034FIUEG",
+                                                            "text": "Read offer T&C"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
                             "instrumentCheckRequired": false,
                             "emiType": "credit-card",
                             "bankCode": "SBI",
@@ -1029,73 +913,251 @@
                             "inlineOfferMessage": [
                                 [
                                     {
-                                        "text": "No Cost EMI ",
-                                        "dlsToken": "success-500",
+                                        "text": "EMI  ",
+                                        "dlsToken": "",
                                         "type": "TEXT"
                                     },
                                     {
-                                        "text": "₹4,552/m",
+                                        "text": "₹1,420/m",
                                         "type": "TEXT"
                                     }
                                 ]
                             ],
                             "messages": [],
                             "clickTracking": {
-                                "amountPayable": 4115500
+                                "amountPayable": 2912600
                             }
                         },
                         {
-                            "title": "Flipkart Axis Bank",
-                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/AXIS.svg",
+                            "title": "Flipkart SBI Credit Card",
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg",
                             "applicable": true,
                             "selected": false,
+                            "aggregatedOffer": {
+                                "selectedText": "2 offer applicable",
+                                "defaultText": "2 offer applicable",
+                                "selectedImage": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/offer-unselected.svg",
+                                "defaultImage": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/offer-unselected.svg",
+                                "dlsToken": "",
+                                "callout": {
+                                    "title": "Details",
+                                    "displayType": "BOTTOM_SHEET",
+                                    "content": {
+                                        "type": "OFFER_LIST",
+                                        "header": {
+                                            "title": "Offer Details"
+                                        },
+                                        "information": {
+                                            "offers": [
+                                                {
+                                                    "offerHeader": {
+                                                        "title": "Extra ₹500 off on SBI Credit Card EMI Transaction on orders of ₹24,990 and above",
+                                                        "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg"
+                                                    },
+                                                    "offerDescription": [
+                                                        {
+                                                            "key": "Min. order value",
+                                                            "value": "₹24,990",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max Order Value",
+                                                            "value": "₹10,00,000",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max. discount",
+                                                            "value": "₹500",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "You get",
+                                                            "value": "₹500",
+                                                            "token": "success-500"
+                                                        }
+                                                    ],
+                                                    "offerFooter": {
+                                                        "tncInfo": {
+                                                            "id": "FPO251202180751JY1ZV",
+                                                            "text": "Read offer T&C"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "offerHeader": {
+                                                        "title": "10% off up to ₹1000 on SBI Credit Card EMI Transactions of ₹4,990 and above",
+                                                        "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg"
+                                                    },
+                                                    "offerDescription": [
+                                                        {
+                                                            "key": "Min. order value",
+                                                            "value": "₹4,990",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max Order Value",
+                                                            "value": "₹10,00,000",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max. discount",
+                                                            "value": "₹1,000",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "You get",
+                                                            "value": "₹1,000",
+                                                            "token": "success-500"
+                                                        }
+                                                    ],
+                                                    "offerFooter": {
+                                                        "tncInfo": {
+                                                            "id": "FPO251202175034FIUEG",
+                                                            "text": "Read offer T&C"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
                             "instrumentCheckRequired": false,
                             "emiType": "credit-card",
-                            "bankCode": "FLIPKARTAXISBANK",
+                            "bankCode": "FLIPKARTSBI",
                             "buttonText": "See Plans",
                             "inlineOfferMessage": [
                                 [
                                     {
-                                        "text": "No Cost EMI ",
-                                        "dlsToken": "success-500",
+                                        "text": "EMI  ",
+                                        "dlsToken": "",
                                         "type": "TEXT"
                                     },
                                     {
-                                        "text": "₹4,552/m",
+                                        "text": "₹1,420/m",
                                         "type": "TEXT"
                                     }
                                 ]
                             ],
                             "messages": [],
                             "clickTracking": {
-                                "amountPayable": 4115500
+                                "amountPayable": 2912600
                             }
                         },
                         {
-                            "title": "Bajaj Finserv",
-                            "logo": "/FK_STATIC_ASSET/apex-static/images/payments/banks/BFL_V3.svg",
+                            "title": "HDFC Bank",
+                            "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/banks/HDFC.svg",
                             "applicable": true,
                             "selected": false,
+                            "aggregatedOffer": {
+                                "selectedText": "2 offer applicable",
+                                "defaultText": "2 offer applicable",
+                                "selectedImage": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/offer-unselected.svg",
+                                "defaultImage": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/offer-unselected.svg",
+                                "dlsToken": "",
+                                "callout": {
+                                    "title": "Details",
+                                    "displayType": "BOTTOM_SHEET",
+                                    "content": {
+                                        "type": "OFFER_LIST",
+                                        "header": {
+                                            "title": "Offer Details"
+                                        },
+                                        "information": {
+                                            "offers": [
+                                                {
+                                                    "offerHeader": {
+                                                        "title": "Extra ₹300 off on HDFC Bank Credit Card EMI on orders of ₹24990 and above",
+                                                        "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg"
+                                                    },
+                                                    "offerDescription": [
+                                                        {
+                                                            "key": "Min. order value",
+                                                            "value": "₹24,990",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max Order Value",
+                                                            "value": "₹10,00,000",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max. discount",
+                                                            "value": "₹300",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "You get",
+                                                            "value": "₹300",
+                                                            "token": "success-500"
+                                                        }
+                                                    ],
+                                                    "offerFooter": {
+                                                        "tncInfo": {
+                                                            "id": "FPO251129151948NDIDF",
+                                                            "text": "Read offer T&C"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "offerHeader": {
+                                                        "title": "10% Off Up to ₹1250 on HDFC Bank Credit Card EMI on 6 months and above tenure . Min.Txn Value: ₹4990",
+                                                        "logo": "/FK_STATIC_ASSET/fk-p-linchpin-web/fk-gringotts/images/green-offer-tag.svg"
+                                                    },
+                                                    "offerDescription": [
+                                                        {
+                                                            "key": "Min. order value",
+                                                            "value": "₹4,990",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max Order Value",
+                                                            "value": "₹10,00,000",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "Max. discount",
+                                                            "value": "₹1,250",
+                                                            "token": ""
+                                                        },
+                                                        {
+                                                            "key": "You get",
+                                                            "value": "₹1,250",
+                                                            "token": "success-500"
+                                                        }
+                                                    ],
+                                                    "offerFooter": {
+                                                        "tncInfo": {
+                                                            "id": "FPO2511291527071FZ4Q",
+                                                            "text": "Read offer T&C"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
                             "instrumentCheckRequired": false,
                             "emiType": "credit-card",
-                            "bankCode": "BAJAJFINSERV",
+                            "bankCode": "HDFC",
                             "buttonText": "See Plans",
                             "inlineOfferMessage": [
                                 [
                                     {
-                                        "text": "No Cost EMI ",
-                                        "dlsToken": "success-500",
+                                        "text": "EMI  ",
+                                        "dlsToken": "",
                                         "type": "TEXT"
                                     },
                                     {
-                                        "text": "₹3,421/m",
+                                        "text": "₹1,427/m",
                                         "type": "TEXT"
                                     }
                                 ]
                             ],
                             "messages": [],
                             "clickTracking": {
-                                "amountPayable": 4115500
+                                "amountPayable": 2912600
                             }
                         }
                     ],
@@ -1129,7 +1191,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 2912600
                             },
                             "bankCode": "SBI",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1144,7 +1206,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 2912600
                             },
                             "bankCode": "HDFC",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1159,7 +1221,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 2912600
                             },
                             "bankCode": "ICICI",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1174,7 +1236,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 2912600
                             },
                             "bankCode": "KOTAK",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1189,7 +1251,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 2912600
                             },
                             "bankCode": "AXIS",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1204,7 +1266,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 2912600
                             },
                             "bankCode": "FEDERALBANK",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1219,7 +1281,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 2912600
                             },
                             "bankCode": "IOB",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1234,7 +1296,7 @@
                             "payButtonDetails": {
                                 "irisKey": "payAmount",
                                 "disablePayButton": false,
-                                "amount": 4115500
+                                "amount": 2912600
                             },
                             "bankCode": "INDIANBANK",
                             "paymentInstrument": "NET_OPTIONS",
@@ -1250,7 +1312,7 @@
             "expanded": false,
             "clickTracking": {
                 "isOfferApplied": false,
-                "amountPayable": 4115500,
+                "amountPayable": 2912600,
                 "discount": 0,
                 "section": "generic",
                 "checkouttype": "normalcheckout"
@@ -1329,7 +1391,7 @@
                                                 {
                                                     "priceType": "PRICE",
                                                     "currency": "INR",
-                                                    "value": "4115500",
+                                                    "value": "2912600",
                                                     "dlsToken": "primary-500 font-l-semibold"
                                                 }
                                             ],
@@ -1343,7 +1405,7 @@
                                                     {
                                                         "priceType": "PRICE",
                                                         "currency": "INR",
-                                                        "value": "4115500",
+                                                        "value": "2912600",
                                                         "dlsToken": "primary-500 font-l-semibold"
                                                     }
                                                 ],
@@ -1356,7 +1418,7 @@
                                 },
                                 "infoMessages": []
                             },
-                            "message": "41,300 people used online payment options in the last hour. Pay online now for safe and contactless delivery.",
+                            "message": "39,241 people used online payment options in the last hour. Pay online now for safe and contactless delivery.",
                             "nudgeInfo": {
                                 "logo": "",
                                 "title": "₹50 discount on online payments",
@@ -1372,7 +1434,7 @@
             "type": "EGV",
             "expanded": false,
             "clickTracking": {
-                "amountPayable": 4115500,
+                "amountPayable": 2912600,
                 "section": "generic",
                 "checkouttype": "normalcheckout"
             },
