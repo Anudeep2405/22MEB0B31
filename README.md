@@ -95,7 +95,7 @@ This project is a backend API for ingesting and processing e-commerce offers, sp
 
 ## Design Choices
 - **Framework:** Chose Node.js with Express.js for its simplicity, scalability, and wide adoption for REST APIs. TypeScript was used for type safety and maintainability.
-- **Database:** MongoDB was selected for its flexibility with semi-structured data and ease of integration with Mongoose. The schema uses a unique index on (offerId, bank, instrument) to prevent duplicate offers and ensure efficient lookups.
+- **Database:** I am more confident with MongoDB and I find it easy to use.MongoDB was selected for its flexibility with semi-structured data and ease of integration with Mongoose. The schema uses a unique index on (offerId, bank, instrument) to prevent duplicate offers and ensure efficient lookups.
 - **Parsing Logic:** Payment instrument mapping and discount calculation primarily leverage structured fields from the Flipkart API (such as instrumentType and provider metadata) for accuracy and efficiency. Text parsing of offer descriptions is used only as a fallback when structured data is unavailable, ensuring robust and optimal processing tailored to Flipkart's data format.
 
 ## Scaling GET /highest-discount Endpoint
@@ -107,8 +107,8 @@ To handle 1,000 requests per second:
     3.paymentInstrument.
 
 - **Caching:** I would use an in-memory cache like redis for frequently accessed discount results to reduce database load.
-- **Horizontal Scaling:** Deploy multiple instances of the API behind a load balancer.
-- **Connection Pooling:** Optimize MongoDB connection pooling for concurrent requests.
+- **Horizontal Scaling:** Can use load balancer and deploy multiple instances of the API.
+- **Connection Pooling:** Optimize MongoDB connection pooling for concurrent requests. Set appropriate pool size in your MongoDB driver (e.g., Mongoose's maxPoolSize option) based on expected traffic.
 - **Async Processing:** i would use asynchronous logic and non-blocking I/O throughout the stack.
 
 ## Improvements with More Time
